@@ -1,0 +1,119 @@
+/* style.css */
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #f7f7f7;
+  color: #222;
+  padding: 24px;
+}
+
+/* Layout */
+header, section, footer {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+/* Spacing between blocks */
+header,
+section,
+footer {
+  margin-bottom: 18px;
+}
+
+/* Header */
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+header p {
+  color: #555;
+}
+
+/* Headings */
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 12px;
+}
+
+/* Projects */
+#projects article {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+
+#projects a {
+  display: inline-block;
+  margin-top: 6px;
+  text-decoration: none;
+  color: #0b5fff;
+  font-weight: bold;
+}
+
+#projects a:hover {
+  text-decoration: underline;
+}
+
+/* Skills list */
+ul {
+  padding-left: 18px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+/* Contact links */
+#contact a {
+  color: #0b5fff;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: #666;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  body {
+    padding: 14px;
+  }
+
+  header, section, footer {
+    padding: 16px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+}
