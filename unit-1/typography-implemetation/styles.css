@@ -1,0 +1,389 @@
+/* ==========================================================================
+   Typography System — styles.css
+   Goals:
+   - Load custom fonts via @font-face with font-display: swap
+   - Modular scale using CSS custom properties + calc()
+   - Readable measure using ch units (aim ~66 characters)
+   - Vertical rhythm using a baseline unit
+   - Responsive typography using clamp() on multiple text levels
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1) Font loading (Google Fonts file URLs, but @font-face written manually)
+   - Using a variable font for maximum flexibility: Inter (wght 100–900)
+   - Fallbacks ensure good rendering if font fails to load
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900; /* variable range */
+  font-display: swap;   /* recommended strategy */
+  src: url("https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTcviYwY.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/inter/v13/UcCN3FwrK3iLTcviYwY.woff2") format("woff2");
+}
+
+/* A serif accent for quotes/citations (optional but nice) */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 200 900; /* variable range */
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/sourceserif4/v9/6xKydSBYKcSV-LCoeQqfX1RYOo3qPZ7nsDqG.woff2") format("woff2");
+}
+
+/* --------------------------------------------------------------------------
+   6) System organization: everything lives in :root custom properties
+   Naming is semantic:
+   - --font-* for font stacks
+   - --step-* for type scale steps
+   - --rhythm-* for baseline rhythm & spacing
+   - --measure-* for line-length targets
+   -------------------------------------------------------------------------- */
+:root {
+  /* Font stacks */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  /* Base size + modular scale ratio
+     Ratio: 1.25 (major third) = clean, not too dramatic */
+  --base-size: 1rem;      /* 16px default */
+  --scale-ratio: 1.25;
+
+  /* Modular scale steps (at least 5 sizes using calc() + ratio) */
+  --step--1: calc(var(--base-size) / var(--scale-ratio)); /* smaller text */
+  --step-0:  var(--base-size);                            /* body */
+  --step-1:  calc(var(--step-0) * var(--scale-ratio));
+  --step-2:  calc(var(--step-1) * var(--scale-ratio));
+  --step-3:  calc(var(--step-2) * var(--scale-ratio));
+  --step-4:  calc(var(--step-3) * var(--scale-ratio));
+  --step-5:  calc(var(--step-4) * var(--scale-ratio));
+
+  /* Responsive typography (clamp on 3+ levels)
+     - Keep body comfortable on mobile; gently grows on desktop */
+  --fluid-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --fluid-h2:   clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --fluid-h1:   clamp(2rem, 1.6rem + 2vw, 3rem);
+  --fluid-lead: clamp(1.125rem, 1.05rem + 0.5vw, 1.35rem);
+
+  /* Vertical rhythm (baseline unit)
+     We base spacing & line-heights on this unit to stay consistent */
+  --rhythm: 0.75rem; /* 12px baseline unit */
+  --lh-body: calc(var(--rhythm) * 2);     /* 24px */
+  --lh-tight: calc(var(--rhythm) * 1.5);  /* 18px */
+  --lh-loose: calc(var(--rhythm) * 2.25); /* 27px */
+
+  /* Spacing scale (multiples of rhythm) */
+  --space-1: var(--rhythm);
+  --space-2: calc(var(--rhythm) * 2);
+  --space-3: calc(var(--rhythm) * 3);
+  --space-4: calc(var(--rhythm) * 4);
+  --space-6: calc(var(--rhythm) * 6);
+
+  /* Measure (line length) using ch units
+     Target ~66ch for body text; headings can be shorter */
+  --measure-body: 66ch;
+  --measure-narrow: 52ch; /* for callouts/cards */
+  --measure-heading: 36ch;
+
+  /* Visual basics (not typography, but helps layout read well) */
+  --bg: #0b0c10;
+  --surface: #111318;
+  --text: #e9eef5;
+  --muted: #b8c3d3;
+  --line: #242833;
+  --link: #8bb6ff;
+
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Base / reset-ish
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fluid-body); /* responsive body type */
+  line-height: var(--lh-body);  /* rhythm-based */
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%, #1a2240 0%, transparent 60%),
+              radial-gradient(1000px 700px at 90% 0%, #2a1a3a 0%, transparent 55%),
+              var(--bg);
+}
+
+/* Links */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Layout: header / main / footer
+   -------------------------------------------------------------------------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(11, 12, 16, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-2);
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+nav a {
+  font-size: var(--step--1);
+  letter-spacing: 0.01em;
+  padding: calc(var(--rhythm) * 0.75) var(--space-1);
+  border-radius: 10px;
+}
+nav a:hover,
+nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+}
+
+/* Two-column layout with readable line-length control */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-2) var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 900px) {
+  main {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3) Measure & readability (ch units)
+   Apply max-width to text-containing regions rather than entire page.
+   -------------------------------------------------------------------------- */
+article {
+  background: rgba(17, 19, 24, 0.6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-4);
+}
+
+article > * {
+  max-width: var(--measure-body);
+}
+
+/* Headings can be a bit shorter for punchier lines */
+article h1,
+article h2,
+article h3,
+article h4 {
+  max-width: var(--measure-heading);
+}
+
+/* Sidebar */
+aside {
+  background: rgba(17, 19, 24, 0.55);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+}
+
+aside > * {
+  max-width: var(--measure-narrow);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--line);
+  padding: var(--space-3) var(--space-2);
+  color: var(--muted);
+  text-align: center;
+  font-size: var(--step--1);
+}
+
+/* --------------------------------------------------------------------------
+   2) Modular scale + 5) Responsive type + 4) Vertical rhythm
+   - Sizes come from step scale or clamp tokens
+   - Spacing uses rhythm multiples
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  margin: 0 0 var(--space-2);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--fluid-h1);
+  line-height: 1.15; /* ← increase from tight to readable */
+  margin-bottom: var(--space-2);
+}
+
+
+h2 {
+  font-size: var(--fluid-h2); /* clamp */
+  margin-top: var(--space-6);
+   line-height: 1.15;
+  padding-top: var(--space-1);
+}
+
+h3 {
+  font-size: var(--step-2); /* modular scale */
+  margin-top: var(--space-3);
+}
+
+h4 {
+  font-size: var(--step-1); /* modular scale */
+  margin-top: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 var(--space-2);
+  color: var(--text);
+}
+
+/* Lead paragraph: larger + slightly looser for readability */
+.lead {
+  font-size: var(--fluid-lead); /* clamp */
+  line-height: var(--lh-loose);
+  color: var(--muted);
+  margin-bottom: var(--space-3);
+}
+
+/* Small print */
+.small {
+  font-size: var(--step--1);
+  line-height: var(--lh-body);
+  color: var(--muted);
+  margin-top: var(--space-3);
+}
+
+/* Lists aligned with rhythm */
+ul, ol {
+  margin: 0 0 var(--space-2);
+  padding-left: var(--space-3);
+}
+
+li {
+  margin: 0 0 var(--space-1);
+}
+
+/* Blockquote: readable measure + distinct style */
+blockquote {
+  margin: var(--space-3) 0;
+  padding: var(--space-2) var(--space-3);
+  border-left: 4px solid rgba(139, 182, 255, 0.7);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+}
+
+blockquote p {
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-serif);
+  font-size: var(--step-1);
+  line-height: var(--lh-loose);
+  color: var(--text);
+}
+
+blockquote cite {
+  display: inline-block;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+
+/* Card + callout components used in your HTML */
+.card,
+.callout {
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.card h3,
+.callout h3 {
+  margin-top: 0;
+}
+
+/* Sidebar "Related Resources" list */
+aside h2 {
+  font-size: var(--step-2);
+  margin-top: 0;
+}
+
+aside ul {
+  margin-bottom: var(--space-3);
+}
+
+aside a {
+  display: inline-block;
+  padding: calc(var(--rhythm) * 0.5) 0;
+}
+
+/* --------------------------------------------------------------------------
+   5) Responsive adjustments (spacing/line-height tweaks)
+   Test targets: 320px, 768px, 1024px+
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  /* Slightly tighter spacing on tiny screens */
+  article {
+    padding: var(--space-3);
+  }
+  h2 {
+    margin-top: var(--space-3);
+  }
+}
+
+@media (min-width: 768px) {
+  /* Roomier rhythm for larger screens */
+  :root {
+    --rhythm: 0.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Subtle readability improvements */
+  article {
+    padding: var(--space-6);
+  }
+}
+
+/* Improve focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid rgba(139, 182, 255, 0.9);
+  outline-offset: 3px;
+  border-radius: 10px;
+}

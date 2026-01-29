@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography System Implementation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Articles</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h1>The Art of Typography in Web Design</h1>
+
+            <p class="lead">
+                Typography is the foundation of effective web design. It guides readers through content, establishes hierarchy, and creates visual harmony that enhances the user experience.
+            </p>
+
+            <p>
+                Good typography is invisible. When readers engage with content without noticing the type itself, the typography has succeeded. This invisibility comes from careful attention to scale, spacing, measure, and rhythm. Each decision contributes to an overall system that feels natural and effortless.
+            </p>
+
+            <h2>Understanding Typographic Hierarchy</h2>
+
+            <p>
+                Hierarchy guides readers through content by establishing clear relationships between different levels of information. A well-designed hierarchy uses size, weight, spacing, and color to create distinct levels that readers can navigate intuitively.
+            </p>
+
+            <h3>The Role of Scale</h3>
+
+            <p>
+                A modular scale creates harmonious size relationships by using mathematical ratios. Common ratios like the golden ratio (1.618) or perfect fourth (1.333) generate proportions that feel natural because they appear throughout nature and classical architecture.
+            </p>
+
+            <blockquote>
+                <p>
+                    "Typography is two-dimensional architecture, based on experience and imagination, and guided by rules and readability."
+                </p>
+                <cite>Hermann Zapf</cite>
+            </blockquote>
+
+            <h3>Measure and Readability</h3>
+
+            <p>
+                The measure, or line length, directly impacts readability. Lines that are too long tire the eyes and make it difficult to find the next line. Lines that are too short create awkward rhythm and force frequent eye movements. The ideal measure falls between 45 and 75 characters, with 66 characters considered optimal for single-column text.
+            </p>
+
+            <h4>Factors Affecting Measure</h4>
+
+            <p>
+                Several factors influence optimal measure. Font size, line height, column width, and reading context all play roles. Body text at 16 pixels with 1.5 line height typically achieves good measure around 600 to 700 pixels wide. Larger text can sustain longer lines, while smaller text benefits from shorter measures.
+            </p>
+
+            <h2>Vertical Rhythm and Spacing</h2>
+
+            <p>
+                Vertical rhythm maintains consistent spacing relationships between elements. By basing all spacing on multiples of a baseline unit, designers create predictable patterns that guide the eye and establish visual harmony.
+            </p>
+
+            <h3>Implementing Rhythm</h3>
+
+            <p>
+                A baseline grid provides the foundation for vertical rhythm. All text baselines and spacing align to this grid, creating consistency throughout the design. Common baseline heights include 24 pixels or 1.5rem, which accommodates most body text comfortably.
+            </p>
+
+            <ul>
+                <li>Line height should be a multiple of the baseline unit</li>
+                <li>Margins and padding should align to the baseline grid</li>
+                <li>Heading sizes should work with the established rhythm</li>
+                <li>Whitespace creates breathing room and visual hierarchy</li>
+            </ul>
+
+            <h3>Responsive Typography</h3>
+
+            <p>
+                Modern typography must adapt to different screen sizes and contexts. Fluid typography scales smoothly across viewport widths, maintaining readability without harsh breakpoints. The clamp() function enables this fluidity by setting minimum, preferred, and maximum sizes.
+            </p>
+
+            <ol>
+                <li>Establish a base size that works across all devices</li>
+                <li>Use viewport units to create fluid scaling</li>
+                <li>Set appropriate minimum and maximum constraints</li>
+                <li>Test across multiple screen sizes and devices</li>
+                <li>Adjust line height and spacing for different contexts</li>
+            </ol>
+
+            <h2>Practical Application</h2>
+
+            <p>
+                Implementing these principles requires both technical skill and design sensitivity. A successful typography system balances mathematical precision with aesthetic judgment. The system should feel cohesive while remaining flexible enough to handle diverse content needs.
+            </p>
+
+            <div class="card">
+                <h3>Typography Checklist</h3>
+                <p>
+                    Before finalizing your typography system, verify that you have addressed these essential elements:
+                </p>
+                <ul>
+                    <li>Clear hierarchy with distinct heading levels</li>
+                    <li>Readable body text with proper measure</li>
+                    <li>Consistent vertical rhythm throughout</li>
+                    <li>Smooth responsive scaling across viewports</li>
+                    <li>Appropriate font loading strategy</li>
+                </ul>
+            </div>
+
+            <p>
+                Typography is both an art and a science. It requires understanding principles while developing intuition through practice. Each project offers opportunities to refine your approach and deepen your understanding of how type works in digital environments.
+            </p>
+
+            <p class="small">
+                Last updated: January 2026. This article represents current best practices in web typography.
+            </p>
+        </article>
+
+        <aside>
+            <h2>Related Resources</h2>
+            <ul>
+                <li><a href="#">Modular Scale Calculator</a></li>
+                <li><a href="#">Typography Guidelines</a></li>
+                <li><a href="#">Font Pairing Examples</a></li>
+                <li><a href="#">Responsive Design Patterns</a></li>
+            </ul>
+
+            <div class="callout">
+                <h3>Quick Tip</h3>
+                <p>
+                    Start with a simple scale ratio like 1.25 (major third) and adjust based on your content needs. Larger ratios create more drama but may be harder to balance.
+                </p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Typography System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
