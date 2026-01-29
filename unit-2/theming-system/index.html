@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase | Themed Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme.js" type="module" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">Product Showcase</h1>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle between light and dark theme">
+                <span class="theme-icon-light">☀️</span>
+                <span class="theme-icon-dark">🌙</span>
+                <span class="theme-label">Theme</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2 class="hero-title">Discover Amazing Products</h2>
+            <p class="hero-description">
+                Explore our curated collection of high-quality products. Filter by category to find exactly what you need.
+            </p>
+        </section>
+
+        <section class="filters">
+            <h2 class="visually-hidden">Filter Products</h2>
+            <div class="filter-buttons">
+                <button class="filter-button active" data-filter="all">All Products</button>
+                <button class="filter-button" data-filter="tech">Technology</button>
+                <button class="filter-button" data-filter="fashion">Fashion</button>
+                <button class="filter-button" data-filter="home">Home & Living</button>
+                <button class="filter-button" data-filter="sports">Sports</button>
+            </div>
+        </section>
+
+        <section class="products">
+            <h2 class="visually-hidden">Product Grid</h2>
+            <div class="product-grid">
+                <article class="product-card" data-category="tech">
+                    <img src="https://picsum.photos/seed/tech1/400/300" alt="Technology product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Wireless Headphones</h3>
+                        <p class="product-description">Premium sound quality with active noise cancellation.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$299.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="fashion">
+                    <img src="https://picsum.photos/seed/fashion1/400/300" alt="Fashion product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Designer Sunglasses</h3>
+                        <p class="product-description">UV protection with polarized lenses and modern style.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$189.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="home">
+                    <img src="https://picsum.photos/seed/home1/400/300" alt="Home product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Smart Table Lamp</h3>
+                        <p class="product-description">Adjustable brightness and color temperature control.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$79.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="sports">
+                    <img src="https://picsum.photos/seed/sports1/400/300" alt="Sports product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Yoga Mat Pro</h3>
+                        <p class="product-description">Non-slip surface with extra cushioning for comfort.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$49.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="tech">
+                    <img src="https://picsum.photos/seed/tech2/400/300" alt="Technology product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Smart Watch</h3>
+                        <p class="product-description">Fitness tracking with heart rate monitor and GPS.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$349.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="fashion">
+                    <img src="https://picsum.photos/seed/fashion2/400/300" alt="Fashion product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Leather Backpack</h3>
+                        <p class="product-description">Durable construction with laptop compartment.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$159.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="home">
+                    <img src="https://picsum.photos/seed/home2/400/300" alt="Home product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Ceramic Coffee Mug Set</h3>
+                        <p class="product-description">Set of 4 handcrafted mugs with unique designs.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$39.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="sports">
+                    <img src="https://picsum.photos/seed/sports2/400/300" alt="Sports product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Running Shoes</h3>
+                        <p class="product-description">Lightweight design with responsive cushioning.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$129.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="tech">
+                    <img src="https://picsum.photos/seed/tech3/400/300" alt="Technology product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Wireless Keyboard</h3>
+                        <p class="product-description">Mechanical switches with customizable RGB lighting.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$149.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="home">
+                    <img src="https://picsum.photos/seed/home3/400/300" alt="Home product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Wall Art Canvas</h3>
+                        <p class="product-description">Modern abstract design printed on quality canvas.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$89.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="fashion">
+                    <img src="https://picsum.photos/seed/fashion3/400/300" alt="Fashion product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Classic Wristwatch</h3>
+                        <p class="product-description">Timeless design with automatic movement.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$279.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="sports">
+                    <img src="https://picsum.photos/seed/sports3/400/300" alt="Sports product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Water Bottle</h3>
+                        <p class="product-description">Insulated stainless steel keeps drinks cold for 24 hours.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$34.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-text">&copy; 2026 Product Showcase. All rights reserved.</p>
+    </footer>
+</body>
+</html>
