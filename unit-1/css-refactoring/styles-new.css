@@ -1,0 +1,473 @@
+/* 
+ * NEW CSS - Your Refactored Version
+ * 
+ * Instructions:
+ * 1. Use CSS nesting to organize your styles
+ * 2. Replace repetitive selectors with :is() 
+ * 3. Use :where() for base styles with zero specificity
+ * 4. Implement :has() for conditional styling (cards with images)
+ * 5. Use :not() for exclusions where appropriate
+ * 
+ * Goal: Recreate the exact same visual appearance as styles-old.css
+ * but with cleaner, more maintainable code using modern CSS techniques.
+ */
+
+/* =========================
+   Reset + Base (low specificity)
+   ========================= */
+:where(*) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(body) {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+:where(a) {
+  text-decoration: none;
+  color: inherit;
+}
+
+:where(button) {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* =========================
+   Header + Navigation (nesting + :where + :is)
+   ========================= */
+.site-header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  /* Using :where(#navigation) keeps this block easy to override */
+  :where(#navigation) {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #667eea;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+
+      .nav-item {
+        .nav-link {
+          color: #666;
+          font-weight: 500;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #667eea;
+          }
+
+          &:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 4px;
+          }
+
+          &.active {
+            color: #667eea;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================
+   Hero (nesting)
+   ========================= */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .hero-title {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/* =========================
+   Buttons (nesting + :is + :not)
+   ========================= */
+.btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+  }
+
+  /* Using :is() to group variants cleanly */
+  &:is(.btn-primary) {
+    background: white;
+    color: #667eea;
+
+    &:hover {
+      background: #f8f9fa;
+    }
+  }
+
+  &:is(.btn-secondary) {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  /* Example modern :not(): if a button is NOT secondary, it has no border (same visual result) */
+  &:not(.btn-secondary) {
+    border: none;
+  }
+}
+
+/* =========================
+   Layout helpers
+   ========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* =========================
+   Titles (reduce repetition with :is)
+   ========================= */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.hero {
+  .hero-content {
+    .section-title {
+      color: white;
+    }
+  }
+}
+
+.testimonials {
+  .section-title {
+    color: #667eea;
+  }
+}
+
+.cta {
+  .cta-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: white;
+  }
+}
+
+/* =========================
+   Features (nesting + :has for conditional styling)
+   ========================= */
+.features {
+  background: #f8f9fa;
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+
+    .card {
+      background: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      /* REPLACES `.card.featured`:
+         If a card has an image, give it the image+content grid layout. */
+      &:has(img) {
+        display: grid;
+        grid-template-rows: 200px 1fr;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 1.5rem;
+
+        .card-title {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+          color: #333;
+        }
+
+        .card-text {
+          color: #666;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+        }
+
+        .card-link {
+          color: #667eea;
+          font-weight: 600;
+          display: inline-block;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================
+   Testimonials
+   ========================= */
+.testimonials {
+  background: white;
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    .testimonial {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid #667eea;
+
+      .testimonial-text {
+        font-size: 1.125rem;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 1.5rem;
+      }
+
+      .testimonial-author {
+        display: block;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.25rem;
+        font-style: normal;
+      }
+
+      .testimonial-role {
+        display: block;
+        color: #888;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* =========================
+   Stats
+   ========================= */
+.stats {
+  background: #667eea;
+  padding: 4rem 2rem;
+
+  .stats-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+
+    .stat-item {
+      text-align: center;
+
+      .stat-number {
+        display: block;
+        font-size: 3rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        display: block;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.125rem;
+      }
+
+      &.highlight {
+        .stat-number,
+        .stat-label {
+          color: #ffd700;
+        }
+      }
+    }
+  }
+}
+
+/* =========================
+   CTA
+   ========================= */
+.cta {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+
+  .cta-text {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 3rem 2rem 1rem;
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    .footer-section {
+      .footer-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .footer-links {
+        list-style: none;
+
+        .footer-link-item {
+          margin-bottom: 0.5rem;
+
+          /* :not() example: keep spacing but could easily exclude last if desired */
+          &:not(:last-child) {
+            margin-bottom: 0.5rem;
+          }
+
+          .footer-link {
+            color: #999;
+            transition: color 0.3s;
+
+            &:hover {
+              color: #667eea;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+    text-align: center;
+
+    .copyright {
+      color: #666;
+    }
+  }
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
+  .hero {
+    .hero-content {
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .cta {
+    .cta-title {
+      font-size: 2rem;
+    }
+  }
+
+  :where(#navigation) {
+    flex-direction: column;
+    gap: 1rem;
+
+    .nav-list {
+      gap: 1rem;
+    }
+  }
+}
+

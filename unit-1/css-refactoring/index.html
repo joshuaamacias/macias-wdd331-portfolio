@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Refactoring Practice</title>
+    <!-- Old CSS (reference only - do not modify) -->
+    <!-- <link rel="stylesheet" href="styles-old.css"> -->
+    
+    <!-- New CSS (your refactored version) -->
+    <link rel="stylesheet" href="styles-new.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav" id="navigation">
+            <a href="#" class="logo">RefactorCSS</a>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Modern CSS Refactoring</h1>
+                <p class="hero-subtitle">Practice modern selectors and CSS nesting</p>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Key Features</h2>
+                
+                <div class="feature-grid">
+                    <article class="card featured">
+                        <img src="https://placehold.co/400x250/667eea/ffffff?text=Feature+1" alt="Feature 1">
+                        <div class="card-content">
+                            <h3 class="card-title">Modern Selectors</h3>
+                            <p class="card-text">Use :is(), :where(), :has(), and :not() to simplify your CSS and reduce repetition.</p>
+                            <a href="#" class="card-link">Learn More</a>
+                        </div>
+                    </article>
+
+                    <article class="card featured">
+                        <img src="https://placehold.co/400x250/4b76a2/ffffff?text=Feature+2" alt="Feature 2">
+                        <div class="card-content">
+                            <h3 class="card-title">CSS Nesting</h3>
+                            <p class="card-text">Organize your styles hierarchically for better readability and maintenance.</p>
+                            <a href="#" class="card-link">Learn More</a>
+                        </div>
+                    </article>
+
+                    <article class="card featured">
+                        <img src="https://placehold.co/400x250/764ba2/ffffff?text=Feature+3" alt="Feature 3">
+                        <div class="card-content">
+                            <h3 class="card-title">Specificity Control</h3>
+                            <p class="card-text">Manage specificity effectively using :where() for base styles and :is() for component styles.</p>
+                            <a href="#" class="card-link">Learn More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Developers Say</h2>
+                
+                <div class="testimonial-grid">
+                    <blockquote class="testimonial">
+                        <p class="testimonial-text">"Modern selectors have transformed how I write CSS. My code is cleaner and more maintainable than ever."</p>
+                        <cite class="testimonial-author">Sarah Chen</cite>
+                        <span class="testimonial-role">Frontend Developer</span>
+                    </blockquote>
+
+                    <blockquote class="testimonial">
+                        <p class="testimonial-text">"The :has() selector eliminated so much JavaScript from my projects. Pure CSS solutions are faster and simpler."</p>
+                        <cite class="testimonial-author">Marcus Rodriguez</cite>
+                        <span class="testimonial-role">Web Developer</span>
+                    </blockquote>
+
+                    <blockquote class="testimonial">
+                        <p class="testimonial-text">"CSS nesting makes my stylesheets so much easier to navigate. I can find and update styles in seconds."</p>
+                        <cite class="testimonial-author">Jamie Lee</cite>
+                        <span class="testimonial-role">UI Engineer</span>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">50%</span>
+                        <span class="stat-label">Less Code</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10x</span>
+                        <span class="stat-label">Faster Updates</span>
+                    </div>
+                    <div class="stat-item highlight">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Better DX</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2 class="cta-title">Ready to Refactor?</h2>
+                <p class="cta-text">Start using modern CSS selectors today and transform your development workflow.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Start Now</button>
+                    <button class="btn btn-secondary">View Docs</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">About</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="#" class="footer-link">Our Story</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Team</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="#" class="footer-link">Documentation</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Tutorials</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Connect</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="#" class="footer-link">Twitter</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">GitHub</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 RefactorCSS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

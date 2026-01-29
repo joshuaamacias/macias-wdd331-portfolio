@@ -1,0 +1,410 @@
+/* 
+ * OLD CSS - DO NOT MODIFY
+ * This is the reference CSS with older patterns
+ * Your task is to refactor this into styles-new.css
+ */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Header and Navigation - Repetitive Patterns */
+.site-header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#navigation {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navigation .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+#navigation .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+#navigation .nav-list .nav-item .nav-link {
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+#navigation .nav-list .nav-item .nav-link:hover {
+    color: #667eea;
+}
+
+#navigation .nav-list .nav-item .nav-link:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 4px;
+}
+
+#navigation .nav-list .nav-item .nav-link.active {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Hero Section - Flat Structure */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero .hero-content .hero-title {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero .hero-content .hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+/* Buttons - Lots of Repetition */
+.btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.btn.btn-primary {
+    background: white;
+    color: #667eea;
+}
+
+.btn.btn-primary:hover {
+    background: #f8f9fa;
+}
+
+.btn.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Container - Used Multiple Times */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Section Titles - Repetitive */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.hero .hero-content .section-title {
+    color: white;
+}
+
+.testimonials .section-title {
+    color: #667eea;
+}
+
+.cta .cta-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+/* Features Section - Cards with Images */
+.features {
+    background: #f8f9fa;
+}
+
+.features .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.features .feature-grid .card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.features .feature-grid .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Cards with images need different layout */
+.features .feature-grid .card.featured {
+    display: grid;
+    grid-template-rows: 200px 1fr;
+}
+
+.features .feature-grid .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.features .feature-grid .card .card-content {
+    padding: 1.5rem;
+}
+
+.features .feature-grid .card .card-content .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.features .feature-grid .card .card-content .card-text {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.features .feature-grid .card .card-content .card-link {
+    color: #667eea;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.features .feature-grid .card .card-content .card-link:hover {
+    text-decoration: underline;
+}
+
+/* Testimonials - More Repetition */
+.testimonials {
+    background: white;
+}
+
+.testimonials .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonials .testimonial-grid .testimonial {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #667eea;
+}
+
+.testimonials .testimonial-grid .testimonial .testimonial-text {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.testimonials .testimonial-grid .testimonial .testimonial-author {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+    font-style: normal;
+}
+
+.testimonials .testimonial-grid .testimonial .testimonial-role {
+    display: block;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Stats Section */
+.stats {
+    background: #667eea;
+    padding: 4rem 2rem;
+}
+
+.stats .stats-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+}
+
+.stats .stats-grid .stat-item {
+    text-align: center;
+}
+
+.stats .stats-grid .stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.stats .stats-grid .stat-item .stat-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.125rem;
+}
+
+.stats .stats-grid .stat-item.highlight .stat-number {
+    color: #ffd700;
+}
+
+.stats .stats-grid .stat-item.highlight .stat-label {
+    color: #ffd700;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.cta .cta-text {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Footer - Lots of Nesting Opportunities */
+.site-footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 3rem 2rem 1rem;
+}
+
+.site-footer .container {
+    padding: 0 2rem;
+}
+
+.site-footer .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.site-footer .footer-content .footer-section .footer-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.site-footer .footer-content .footer-section .footer-links {
+    list-style: none;
+}
+
+.site-footer .footer-content .footer-section .footer-links .footer-link-item {
+    margin-bottom: 0.5rem;
+}
+
+.site-footer .footer-content .footer-section .footer-links .footer-link-item .footer-link {
+    color: #999;
+    transition: color 0.3s;
+}
+
+.site-footer .footer-content .footer-section .footer-links .footer-link-item .footer-link:hover {
+    color: #667eea;
+}
+
+.site-footer .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.site-footer .footer-bottom .copyright {
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero .hero-content .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .cta .cta-title {
+        font-size: 2rem;
+    }
+    
+    #navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #navigation .nav-list {
+        gap: 1rem;
+    }
+}
