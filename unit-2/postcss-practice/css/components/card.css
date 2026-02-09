@@ -4,73 +4,129 @@
  * Uses @supports for progressive enhancement with fallbacks.
  */
 
-/* TODO: Set up the card container for container queries
- * 1. Add container-type: inline-size
- * 2. Add container-name: card
- * Hint: You learned about this in the Container Queries lesson
- */
+/* ============================================================
+   BASE / FALLBACK STYLES (WORK EVERYWHERE)
+   These styles apply in all browsers, even without
+   container queries or CSS nesting support.
+   Cards remain stacked vertically.
+============================================================ */
 
-.card-container {
-    /* Your container query setup goes here */
-
-    .card {
-        background-color: var(--bg-clr);
-        border: 1px solid var(--table-border-clr);
-        border-radius: var(--radius-med);
-        padding: var(--spacing-med);
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
-
-        .card-image {
-            width: 100%;
-            height: auto;
-            border-radius: var(--radius-sm);
-            object-fit: cover;
-        }
-
-        .card-title {
-            font-size: var(--font-size-med);
-            font-weight: 700;
-            color: var(--text-clr);
-        }
-
-        .card-description {
-            font-size: var(--font-size-med);
-            color: var(--text-clr);
-            line-height: var(--line-height-med);
-        }
-    }
+.card-container .card {
+  background-color: var(--bg-clr);
+  border: 1px solid var(--table-border-clr);
+  border-radius: var(--radius-med);
+  padding: var(--spacing-med);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
-/* TODO: Add container query for cards at 400px width
- * When the container is at least 400px wide:
- * 1. Change .card to use flex-direction: row
- * 2. Set .card-image to a fixed width (like 200px)
- * 3. Add flex-shrink: 0 to the image so it doesn't shrink
- */
+.card-container .card-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
 
-/* TODO: Add @supports check for container queries
- * Wrap your container query in: @supports (container-type: inline-size) { }
- * This ensures browsers without container query support use the base styles
- * as a fallback.
- */
+.card-container .card-title {
+  font-size: var(--font-size-med);
+  font-weight: 700;
+  color: var(--text-clr);
+}
 
-/* TODO: Add modern CSS feature with @supports fallback
- * Choose ONE of these modern features to implement with a fallback:
- * 
- * Option 1: CSS Nesting
- * - Use native CSS nesting for hover states inside .card
- * - Wrap in: @supports (selector(&)) { }
- * - Provide separate hover rules as fallback
- * 
- * Option 2: color-mix()
- * - Use color-mix() to create hover background color
- * - Wrap in: @supports (background: color-mix(in oklch, red, blue)) { }
- * - Provide static color as fallback
- * 
- * Option 3: Subgrid (if using a card grid)
- * - Use subgrid to align card content across cards
- * - Wrap in: @supports (grid-template-columns: subgrid) { }
- * - Provide standard grid as fallback
- */
+.card-container .card-description {
+  font-size: var(--font-size-med);
+  color: var(--text-clr);
+  line-height: var(--line-height-med);
+}
+
+/* ------------------------------------------------------------
+   FALLBACK HOVER EFFECT (NO CSS NESTING REQUIRED)
+   This ensures hover behavior works in all browsers.
+------------------------------------------------------------ */
+
+.card-container .card:hover {
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   MODERN FEATURE #1: CSS NESTING
+   Uses native CSS nesting if supported.
+   Wrapped in @supports with a fallback above.
+============================================================ */
+
+@supports (selector(&)) {
+  .card-container {
+    .card {
+      background-color: var(--bg-clr);
+      border: 1px solid var(--table-border-clr);
+      border-radius: var(--radius-med);
+      padding: var(--spacing-med);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+
+      /* Nested hover state (enhanced version) */
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      .card-image {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius-sm);
+        object-fit: cover;
+      }
+
+      .card-title {
+        font-size: var(--font-size-med);
+        font-weight: 700;
+        color: var(--text-clr);
+      }
+
+      .card-description {
+        font-size: var(--font-size-med);
+        color: var(--text-clr);
+        line-height: var(--line-height-med);
+      }
+    }
+  }
+}
+
+/* ============================================================
+   MODERN FEATURE #2: CONTAINER QUERIES
+   Progressive enhancement using @supports
+============================================================ */
+
+/* ------------------------------------------------------------
+   SET UP THE CARD CONTAINER
+   - container-type: inline-size tracks width
+   - container-name allows explicit querying
+------------------------------------------------------------ */
+
+@supports (container-type: inline-size) {
+  .card-container {
+    container-type: inline-size;
+    container-name: card;
+  }
+
+  /* ----------------------------------------------------------
+     CONTAINER QUERY AT 400px
+     When the container reaches 400px:
+     - Card switches to horizontal layout
+     - Image gets fixed width and does not shrink
+  ---------------------------------------------------------- */
+
+  @container card (min-width: 400px) {
+    .card-container .card {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .card-container .card-image {
+      width: 200px;
+      flex-shrink: 0;
+      height: auto;
+    }
+  }
+}
