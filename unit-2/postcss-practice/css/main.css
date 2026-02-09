@@ -1,0 +1,18 @@
+/**
+ * Main CSS Entry Point
+ * This file imports all CSS modules in the correct order.
+ * PostCSS will process these @import statements and combine them into a single file.
+ */
+
+/* Base: Variables, colors, fonts, and foundational styles */
+@import 'base/variables.css';
+@import 'base/base.css';
+
+/* Layout: Page structure and major layout patterns */
+@import 'layout/layout.css';
+
+/* Components: Reusable UI components */
+@import 'components/card.css';
+
+/* Utilities: Single-purpose helper classes */
+@import 'utilities/utilities.css';

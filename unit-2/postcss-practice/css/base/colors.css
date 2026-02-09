@@ -1,0 +1,135 @@
+/**
+ * Theme color variables. Light theme is the base; dark values are defined once
+ * and applied for both the .dark class and prefers-color-scheme: dark.
+ */
+html {
+    /* Dark palette: single source of truth (no duplication) */
+    --dark-bg-clr: #1a1a1a;
+    --dark-footer-bg-clr: #2a2a2a;
+    --dark-footer-border-clr: #444444;
+    --dark-header-shadow: 0px 1px 4px 0px rgba(255, 255, 255, 0.15);
+    --dark-header-text-clr: #ffffff;
+    --dark-link-clr: #79bfe3;
+    --dark-link-hover-clr: #a1d7ec;
+    --dark-text-clr: #e5e5e5;
+    --dark-toggle-icon-clr: #b3b3b3;
+    --dark-table-border-clr: #444444;
+    --dark-table-header-clr: #2a2a2a;
+    --dark-table-stripe-clr: #222222;
+    --dark-code-bg-clr: #33343a;
+    --dark-code-text-clr: #e0e0e0;
+    --dark-code-border-clr: #4a4b50;
+    --dark-callout-shadow: 0px 1px 3px 0px rgba(255, 255, 255, 0.35);
+    --dark-details-shadow: 0px 1px 3px 0px rgba(255, 255, 255, 0.35);
+
+    /* Light (base) theme variables */
+    --bg-clr: #f5f5f5;
+    --footer-bg-clr: #f0f0f0;
+    --footer-border-clr: #d8d8d8;
+    --header-bg-clr: #006eb6;
+    --header-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+    --header-text-clr: #ffffff;
+    --link-clr: #1c90d0;
+    --link-hover-clr: #166d99;
+    --table-border-clr: #d8d8d8;
+    --table-header-clr: #f0f0f0;
+    --table-stripe-clr: #fafafa;
+    --text-clr: #333;
+    --toggle-icon-clr: #818181;
+
+    /* Inline Code */
+    --code-bg-clr: #e5e5e5;
+    --code-text-clr: #333333;
+    --code-border: #c1c1c1;
+
+    /* Callouts */
+    --callout-black-clr: #000000;
+    --callout-light-gray-clr: #f5f5f5;
+    --callout-message-bg-clr: #e8eaf6;
+    --callout-message-text-clr: #1a237e;
+    --callout-notice-bg-clr: #e1f5fe;
+    --callout-notice-text-clr: #01579b;
+    --callout-success-bg-clr: #e8f5e9;
+    --callout-success-text-clr: #1b5e20;
+    --callout-warning-bg-clr: #fff3e0;
+    --callout-warning-text-clr: #e65100;
+    --callout-link-clr: #1c90d0;
+    --callout-link-hover-clr: #166d99;
+    --callout-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
+
+    /* Details */
+    --details-black-clr: #000000;
+    --details-default-text-clr: #000000;
+    --details-light-gray-clr: #f5f5f5;
+    --details-message-bg-clr: #e8eaf6;
+    --details-message-text-clr: #1a237e;
+    --details-notice-bg-clr: #e1f5fe;
+    --details-notice-text-clr: #01579b;
+    --details-success-bg-clr: #e8f5e9;
+    --details-success-text-clr: #1b5e20;
+    --details-warning-bg-clr: #fff3e0;
+    --details-warning-text-clr: #e65100;
+    --details-link-clr: #1c90d0;
+    --details-link-hover-clr: #166d99;
+    --details-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
+
+    & .dark {
+        display: none;
+    }
+
+    /* Dark theme: class toggle (references palette above) */
+    &.dark {
+        --bg-clr: var(--dark-bg-clr);
+        --footer-bg-clr: var(--dark-footer-bg-clr);
+        --footer-border-clr: var(--dark-footer-border-clr);
+        --header-shadow: var(--dark-header-shadow);
+        --header-text-clr: var(--dark-header-text-clr);
+        --link-clr: var(--dark-link-clr);
+        --link-hover-clr: var(--dark-link-hover-clr);
+        --text-clr: var(--dark-text-clr);
+        --toggle-icon-clr: var(--dark-toggle-icon-clr);
+        --table-border-clr: var(--dark-table-border-clr);
+        --table-header-clr: var(--dark-table-header-clr);
+        --table-stripe-clr: var(--dark-table-stripe-clr);
+        --code-bg-clr: var(--dark-code-bg-clr);
+        --code-text-clr: var(--dark-code-text-clr);
+        --code-border-clr: var(--dark-code-border-clr);
+        --callout-shadow: var(--dark-callout-shadow);
+        --details-shadow: var(--dark-details-shadow);
+
+        & .light {
+            display: none;
+        }
+    }
+
+    /* Dark theme: system preference (same palette, no duplicated values) */
+    @media (prefers-color-scheme: dark) {
+        &:not(.light) {
+            --bg-clr: var(--dark-bg-clr);
+            --footer-bg-clr: var(--dark-footer-bg-clr);
+            --footer-border-clr: var(--dark-footer-border-clr);
+            --header-shadow: var(--dark-header-shadow);
+            --header-text-clr: var(--dark-header-text-clr);
+            --link-clr: var(--dark-link-clr);
+            --link-hover-clr: var(--dark-link-hover-clr);
+            --text-clr: var(--dark-text-clr);
+            --toggle-icon-clr: var(--dark-toggle-icon-clr);
+            --table-border-clr: var(--dark-table-border-clr);
+            --table-header-clr: var(--dark-table-header-clr);
+            --table-stripe-clr: var(--dark-table-stripe-clr);
+            --code-bg-clr: var(--dark-code-bg-clr);
+            --code-text-clr: var(--dark-code-text-clr);
+            --code-border-clr: var(--dark-code-border-clr);
+            --callout-shadow: var(--dark-callout-shadow);
+            --details-shadow: var(--dark-details-shadow);
+
+            & .dark {
+                display: initial;
+            }
+
+            & .light {
+                display: none;
+            }
+        }
+    }
+}

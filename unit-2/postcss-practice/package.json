@@ -1,0 +1,17 @@
+{
+    "name": "css-build-practice",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "build": "postcss css/main.css -o css/main.min.css",
+        "watch": "postcss css/main.css -o css/main.min.css --watch"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.0",
+        "cssnano": "^6.0.0",
+        "postcss": "^8.4.0",
+        "postcss-cli": "^11.0.0",
+        "postcss-import": "^16.0.0",
+        "postcss-url": "^10.1.3"
+    }
+}

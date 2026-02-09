@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Build Practice</title>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <!--
+        GO BEYOND THE ASSIGNMENT BASICS
+        This page meets the assignment requirements, but the design is intentionally bare.
+        Consider improving the experience by refining the CSS. For example:
+        - Font sizing, line heights, and spacing (margin and padding) are minimal on this
+          site; correcting or tuning these will make the content much more readable and
+          visually balanced. Try adjusting variables in base/variables.css and component
+          styles, and use consistent rhythm for margins and padding.
+        - You can also improve colors, borders, focus states, the color-mode toggle placement
+          and styling, or add more layout polish. Use this as a chance to practice
+          production-quality CSS, not just the minimum needed to pass.
+    -->
+    <div class="container">
+        <header>
+            <h1>Container Queries and Feature Detection</h1>
+            <p>Practice using PostCSS, container queries, and @supports for progressive enhancement.</p>
+            <button type="button" id="color-mode-toggle" aria-pressed="false">
+                <span class="light" aria-label="Toggle dark mode" title="Toggle dark mode">🌕</span>
+                <span class="dark" aria-label="Toggle dark mode" title="Toggle light mode">☀️</span>
+            </button>
+        </header>
+
+        <main class="flow">
+            <section>
+                <h2>Responsive Cards</h2>
+                <p>
+                    The cards below use container queries to adapt to their container size. 
+                    When the container is wide enough, the cards switch to a horizontal layout.
+                </p>
+
+                <div class="grid">
+                    <div class="card-container">
+                        <article class="card">
+                            <img src="https://placehold.co/400x300/006eb6/ffffff?text=Image+1" 
+                                 alt="Placeholder image 1" 
+                                 class="card-image">
+                            <div>
+                                <h3 class="card-title">Card Title 1</h3>
+                                <p class="card-description">
+                                    This card demonstrates container queries. Try resizing the browser 
+                                    window to see how the card layout adapts to its container size, 
+                                    not the viewport size.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="card-container">
+                        <article class="card">
+                            <img src="https://placehold.co/400x300/1c90d0/ffffff?text=Image+2" 
+                                 alt="Placeholder image 2" 
+                                 class="card-image">
+                            <div>
+                                <h3 class="card-title">Card Title 2</h3>
+                                <p class="card-description">
+                                    Container queries allow components to be truly modular. The same 
+                                    card component works in narrow sidebars and wide content areas.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="card-container">
+                        <article class="card">
+                            <img src="https://placehold.co/400x300/166d99/ffffff?text=Image+3" 
+                                 alt="Placeholder image 3" 
+                                 class="card-image">
+                            <div>
+                                <h3 class="card-title">Card Title 3</h3>
+                                <p class="card-description">
+                                    By using @supports, we ensure these cards work even in browsers 
+                                    that do not support container queries yet. Progressive enhancement 
+                                    in action!
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Build Process Information</h2>
+                <p>
+                    This page uses PostCSS to process the CSS files. The build process combines 
+                    multiple CSS files, adds vendor prefixes, and minimizes the output.
+                </p>
+                <ul>
+                    <li>Source files are in <code>css/</code> organized by CUBE CSS principles</li>
+                    <li>PostCSS processes <code>css/main.css</code> and outputs <code>css/main.min.css</code></li>
+                    <li>The JavaScript in the head checks for the processed file and uses it if available</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 CSS Build Practice</p>
+        </footer>
+    </div>
+</body>
+</html>

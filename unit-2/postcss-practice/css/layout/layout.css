@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding-inline: var(--spacing-med);
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-med);
+}

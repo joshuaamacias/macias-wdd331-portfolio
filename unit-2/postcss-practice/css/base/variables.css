@@ -1,0 +1,38 @@
+@import 'colors.css';
+
+:root {
+    /**
+     * Borders
+     */
+    --radius-sm: 4px;
+    --radius-med: 8px;
+    --radius-lg: 12px;
+
+    /**
+     * Content Spacing
+     */
+    --spacing-sm: 8px;
+    --spacing-med: 16px;
+    --spacing-lg: 32px;
+
+    /**
+     * Layout Sizes
+     */
+    --content-max-width: 1200px;
+    --breakout-max-width: calc(var(--content-max-width) + (var(--spacing-lg) * 2));
+    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+     
+    /**
+     * Typography
+     */
+    --font-family-base: 'Roboto', sans-serif;
+    --font-family-mono: 'Roboto Mono', monospace;
+    --font-size-lg: 2.4rem;
+    --font-size-med: 1.8rem;
+    --font-size-sm: 1rem;
+    --font-size-base: var(--font-size-med);
+    --line-height-lg: 3.2rem;
+    --line-height-med: 2.6rem;
+    --line-height-sm: 1.7rem;
+    --line-height-base: var(--line-height-med);
+}

@@ -1,0 +1,76 @@
+/**
+ * Card Component
+ * A responsive card that adapts to its container size using container queries.
+ * Uses @supports for progressive enhancement with fallbacks.
+ */
+
+/* TODO: Set up the card container for container queries
+ * 1. Add container-type: inline-size
+ * 2. Add container-name: card
+ * Hint: You learned about this in the Container Queries lesson
+ */
+
+.card-container {
+    /* Your container query setup goes here */
+
+    .card {
+        background-color: var(--bg-clr);
+        border: 1px solid var(--table-border-clr);
+        border-radius: var(--radius-med);
+        padding: var(--spacing-med);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: var(--font-size-med);
+            font-weight: 700;
+            color: var(--text-clr);
+        }
+
+        .card-description {
+            font-size: var(--font-size-med);
+            color: var(--text-clr);
+            line-height: var(--line-height-med);
+        }
+    }
+}
+
+/* TODO: Add container query for cards at 400px width
+ * When the container is at least 400px wide:
+ * 1. Change .card to use flex-direction: row
+ * 2. Set .card-image to a fixed width (like 200px)
+ * 3. Add flex-shrink: 0 to the image so it doesn't shrink
+ */
+
+/* TODO: Add @supports check for container queries
+ * Wrap your container query in: @supports (container-type: inline-size) { }
+ * This ensures browsers without container query support use the base styles
+ * as a fallback.
+ */
+
+/* TODO: Add modern CSS feature with @supports fallback
+ * Choose ONE of these modern features to implement with a fallback:
+ * 
+ * Option 1: CSS Nesting
+ * - Use native CSS nesting for hover states inside .card
+ * - Wrap in: @supports (selector(&)) { }
+ * - Provide separate hover rules as fallback
+ * 
+ * Option 2: color-mix()
+ * - Use color-mix() to create hover background color
+ * - Wrap in: @supports (background: color-mix(in oklch, red, blue)) { }
+ * - Provide static color as fallback
+ * 
+ * Option 3: Subgrid (if using a card grid)
+ * - Use subgrid to align card content across cards
+ * - Wrap in: @supports (grid-template-columns: subgrid) { }
+ * - Provide standard grid as fallback
+ */
