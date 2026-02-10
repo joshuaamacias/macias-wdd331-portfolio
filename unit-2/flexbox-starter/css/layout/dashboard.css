@@ -1,0 +1,183 @@
+/**
+ * Dashboard Layout
+ * TODO: Implement a dashboard with header, sidebar, main content area, and footer
+ * 
+ * Requirements:
+ * - Header should be fixed height with items positioned using Flexbox
+ * - Sidebar should be fixed width (use var(--sidebar-width))
+ * - Main content should fill remaining space
+ * - Footer should stick to the bottom of the viewport
+ * - Cards in main content should use nested Flexbox with sticky footers
+ */
+
+/* TODO: Style the dashboard container
+ * Hint: Use display: flex with flex-direction: column and min-height: 100vh
+ * This creates a full-height column flex container
+ */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* TODO: Style the dashboard header
+ * Hint: Fixed height, use Flexbox to position logo and user menu
+ * Use align-items: center for vertical alignment
+ * Consider how to push user menu to the right
+ */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+
+    height: var(--header-height);
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0 var(--spacing-lg);
+}
+
+.dashboard-logo {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+}
+
+.dashboard-user-menu {
+    /* Your code here - how do you push this to the right? */
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-left: auto; /* pushes menu to right edge */
+}
+
+/* TODO: Style the main body area (sidebar + content)
+ * Hint: This should be a Flexbox row that grows to fill available space
+ * Use flex: 1 to make this section expand
+ */
+.dashboard-body {
+    display: flex;
+
+    /* explicit grow/shrink/basis instead of flex: 1 */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+/* TODO: Style the sidebar
+ * Hint: Fixed width using var(--sidebar-width)
+ * Use flex-shrink: 0 to prevent it from shrinking
+ * Sidebar navigation items should stack vertically
+ */
+.dashboard-sidebar {
+    /* Your code here */
+    flex-grow: 0;
+    flex-shrink: 0;               /* prevents collapsing */
+    flex-basis: var(--sidebar-width);
+
+    background-color: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    padding: var(--spacing-lg);
+}
+
+.sidebar-nav {
+    /* Your code here - stack nav items vertically */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.sidebar-nav-item {
+    padding: var(--spacing-sm) var(--spacing-med);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.sidebar-nav-item:hover {
+    background-color: var(--color-border);
+}
+
+/* TODO: Style the main content area
+ * Hint: Should grow to fill remaining width
+ * Use flex: 1 to expand
+ */
+.dashboard-main {
+    /* Your code here */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 0;
+
+    padding: var(--spacing-xl);
+}
+
+/* TODO: Style the cards container
+ * Hint: Consider using Flexbox with flex-wrap or CSS Grid
+ * Cards should be arranged in a responsive grid pattern
+ */
+.dashboard-cards {
+    /* Your code here */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+
+    /* requirement: use align-content with wrapped flex items */
+    align-content: flex-start;
+}
+
+/* TODO: Style individual cards with nested Flexbox
+ * Hint: Each card should be a flex container with flex-direction: column
+ * The card body should use flex: 1 to push the footer to the bottom
+ * This is the sticky footer pattern from the reading
+ */
+.dashboard-card {
+    /* Your code here */
+    display: flex;
+    flex-direction: column;
+
+    /* explicit grow/shrink/basis instead of flex shorthand */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 260px;
+
+    background-color: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-med);
+    box-shadow: var(--shadow-sm);
+}
+
+.dashboard-card-header {
+    padding: var(--spacing-med);
+    border-bottom: 1px solid var(--color-border);
+    font-weight: var(--font-weight-bold);
+}
+
+.dashboard-card-body {
+    /* Your code here - this should grow to fill available space */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+
+    padding: var(--spacing-med);
+}
+
+.dashboard-card-footer {
+    /* Your code here - this should stay at the bottom */
+    /* (body grows, so footer naturally stays at bottom of card) */
+    padding: var(--spacing-med);
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+}
+
+/* TODO: Style the dashboard footer
+ * Hint: Fixed height that stays at bottom
+ * Use Flexbox to center content if needed
+ */
+.dashboard-footer {
+    /* Your code here */
+    display: flex;
+    align-items: center;
+
+    height: 60px;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding: 0 var(--spacing-lg);
+}

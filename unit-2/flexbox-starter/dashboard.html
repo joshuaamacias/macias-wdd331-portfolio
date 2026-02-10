@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Advanced Flexbox Layouts</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout/dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="dashboard-logo">DashApp</div>
+            <nav class="dashboard-user-menu">
+                <a href="#" class="btn btn-small btn-outline">Profile</a>
+                <a href="#" class="btn btn-small btn-outline">Logout</a>
+            </nav>
+        </header>
+
+        <!-- Main Body (Sidebar + Content) -->
+        <div class="dashboard-body">
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar">
+                <nav class="sidebar-nav">
+                    <a href="#" class="sidebar-nav-item">Dashboard</a>
+                    <a href="#" class="sidebar-nav-item">Analytics</a>
+                    <a href="#" class="sidebar-nav-item">Projects</a>
+                    <a href="#" class="sidebar-nav-item">Team</a>
+                    <a href="#" class="sidebar-nav-item">Settings</a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="dashboard-main">
+                <h1>Dashboard Overview</h1>
+                <p class="text-muted">Welcome back! Here's what's happening with your projects today.</p>
+
+                <!-- Cards Container -->
+                <div class="dashboard-cards">
+                    <!-- Card 1 -->
+                    <article class="dashboard-card">
+                        <header class="dashboard-card-header">
+                            Active Projects
+                        </header>
+                        <div class="dashboard-card-body">
+                            <p class="text-large text-bold">24</p>
+                            <p class="text-muted">Projects in progress</p>
+                        </div>
+                        <footer class="dashboard-card-footer">
+                            <a href="#" class="btn btn-small btn-primary">View All</a>
+                        </footer>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="dashboard-card">
+                        <header class="dashboard-card-header">
+                            Team Members
+                        </header>
+                        <div class="dashboard-card-body">
+                            <p class="text-large text-bold">128</p>
+                            <p class="text-muted">Active team members</p>
+                        </div>
+                        <footer class="dashboard-card-footer">
+                            <a href="#" class="btn btn-small btn-primary">Manage Team</a>
+                        </footer>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="dashboard-card">
+                        <header class="dashboard-card-header">
+                            Completed Tasks
+                        </header>
+                        <div class="dashboard-card-body">
+                            <p class="text-large text-bold">892</p>
+                            <p class="text-muted">Tasks completed this month</p>
+                            <p class="text-small text-muted">This card has more content to demonstrate that card footers should align at the bottom even when content varies in length.</p>
+                        </div>
+                        <footer class="dashboard-card-footer">
+                            <a href="#" class="btn btn-small btn-primary">View Details</a>
+                        </footer>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="dashboard-card">
+                        <header class="dashboard-card-header">
+                            Revenue
+                        </header>
+                        <div class="dashboard-card-body">
+                            <p class="text-large text-bold">$45,290</p>
+                            <p class="text-muted">Total revenue this quarter</p>
+                        </div>
+                        <footer class="dashboard-card-footer">
+                            <a href="#" class="btn btn-small btn-primary">View Report</a>
+                        </footer>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="dashboard-card">
+                        <header class="dashboard-card-header">
+                            Pending Reviews
+                        </header>
+                        <div class="dashboard-card-body">
+                            <p class="text-large text-bold">7</p>
+                            <p class="text-muted">Items awaiting your review</p>
+                        </div>
+                        <footer class="dashboard-card-footer">
+                            <a href="#" class="btn btn-small btn-primary">Review Now</a>
+                        </footer>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="dashboard-card">
+                        <header class="dashboard-card-header">
+                            System Status
+                        </header>
+                        <div class="dashboard-card-body">
+                            <p class="text-large text-bold">99.9%</p>
+                            <p class="text-muted">Uptime this month</p>
+                            <p class="text-small text-muted">All systems operational. This extra text demonstrates varying card content lengths and how footers should still align.</p>
+                        </div>
+                        <footer class="dashboard-card-footer">
+                            <a href="#" class="btn btn-small btn-primary">View Status</a>
+                        </footer>
+                    </article>
+                </div>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p class="text-small text-muted">&copy; 2024 DashApp. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

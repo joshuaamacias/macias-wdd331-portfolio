@@ -1,0 +1,214 @@
+/**
+ * Product Page Layout
+ * TODO: Implement a product detail page with gallery, info panel, specs, and reviews
+ * 
+ * Requirements:
+ * - Gallery and info panel should be side-by-side on wide screens, stacked on narrow
+ * - Thumbnail strip should use Flexbox with gap
+ * - Specifications should create responsive columns using flex-basis
+ * - Reviews should use the media object pattern
+ */
+
+.product-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+/* TODO: Style the product top section (gallery + info)
+ * Hint: Use Flexbox with flex-wrap: wrap
+ * Set appropriate flex-basis values for responsive behavior
+ * Gallery should be larger than info panel
+ */
+.product-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+    align-items: flex-start;
+}
+
+/* TODO: Style the image gallery
+ * Hint: Should be a flex item with flex-basis around 60%
+ * Contains main image and thumbnail strip
+ */
+.product-gallery {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 60%;
+    min-width: 300px;
+}
+
+.product-main-image {
+    width: 100%;
+    border-radius: var(--radius-med);
+    margin-bottom: var(--spacing-med);
+    border: 1px solid var(--color-border);
+}
+
+/* TODO: Style the thumbnail strip
+ * Hint: Use Flexbox with gap for spacing
+ * Each thumbnail should have a fixed flex-basis but can shrink
+ */
+.product-thumbnails {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.product-thumbnail {
+    /* Your code here - what flex properties create fixed-width thumbnails that can shrink? */
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 120px;
+
+    border-radius: var(--radius-sm);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color var(--transition-base);
+}
+
+.product-thumbnail:hover,
+.product-thumbnail.active {
+    border-color: var(--color-primary);
+}
+
+/* TODO: Style the product info panel
+ * Hint: Should be a flex item with flex-basis around 35%
+ * Use flex-direction: column to stack content
+ * Use gap for consistent spacing between sections
+ */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-med);
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 35%;
+    min-width: 280px;
+}
+
+.product-title {
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-price {
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-med);
+}
+
+.product-description {
+    margin-bottom: var(--spacing-lg);
+    line-height: var(--line-height-relaxed);
+}
+
+.product-actions {
+    /* Your code here - use Flexbox to arrange buttons */
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+/* TODO: Style the specifications section
+ * Hint: Use Flexbox with flex-wrap to create responsive columns
+ * Each spec item should have flex: 1 1 200px for automatic wrapping
+ */
+.product-specs {
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+}
+
+.specs-list {
+    /* Your code here */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-med);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.spec-item {
+    /* Your code here */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px;
+
+    padding: var(--spacing-med);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-sm);
+}
+
+.spec-label {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.spec-value {
+    color: var(--color-text);
+}
+
+/* TODO: Style the reviews section with media object pattern
+ * Hint: Each review should be a Flexbox container
+ * Avatar on left with fixed width, content on right grows to fill space
+ * Content area needs min-width: 0 to allow text wrapping
+ */
+.product-reviews {
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+}
+
+.review {
+    /* Your code here - implement media object pattern */
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review-avatar {
+    /* Your code here - fixed width, no shrinking */
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 60px;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+}
+
+.review-content {
+    /* Your code here - grows to fill space, remember min-width: 0 */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 0;
+}
+
+.review-author {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.review-rating {
+    color: var(--color-warning);
+    margin-bottom: var(--spacing-sm);
+}
+
+.review-text {
+    line-height: var(--line-height-relaxed);
+}

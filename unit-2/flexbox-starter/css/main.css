@@ -1,0 +1,17 @@
+/**
+ * Main CSS Entry Point
+ * Imports all component styles in the correct order
+ */
+
+/* Base Styles */
+@import 'base/variables.css';
+@import 'base/reset.css';
+@import 'base/typography.css';
+
+/* Components */
+@import 'components/buttons.css';
+
+/* Layouts - Import the one you need for each page */
+/* @import 'layout/dashboard.css'; */
+/* @import 'layout/product.css'; */
+/* @import 'layout/article.css'; */

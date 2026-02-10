@@ -1,0 +1,60 @@
+/**
+ * Typography Styles
+ * Heading and text formatting
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-med);
+}
+
+h1 {
+    font-size: var(--font-size-xxlarge);
+}
+
+h2 {
+    font-size: var(--font-size-xlarge);
+}
+
+h3 {
+    font-size: var(--font-size-large);
+}
+
+h4 {
+    font-size: var(--font-size-med);
+}
+
+h5,
+h6 {
+    font-size: var(--font-size-base);
+}
+
+p {
+    margin-bottom: var(--spacing-med);
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-small {
+    font-size: var(--font-size-small);
+}
+
+.text-large {
+    font-size: var(--font-size-large);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-bold {
+    font-weight: var(--font-weight-bold);
+}

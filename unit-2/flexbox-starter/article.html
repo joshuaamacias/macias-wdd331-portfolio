@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Layout - Advanced Flexbox Layouts</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout/article.css">
+</head>
+<body>
+    <article class="article-container">
+        <!-- Hero Section -->
+        <header class="article-hero">
+            <h1 class="article-hero-title">The Future of Web Layout Design</h1>
+            <p class="article-hero-subtitle">
+                How modern CSS is transforming the way we build responsive interfaces
+            </p>
+            <div class="article-hero-meta">
+                Published on February 4, 2026 by Alex Thompson
+            </div>
+        </header>
+
+        <!-- Main Body (Content + Sidebar) -->
+        <div class="article-body">
+            <!-- Main Article Content -->
+            <div class="article-content">
+                <p class="article-text">
+                    The landscape of web design has evolved dramatically over the past decade. 
+                    What once required complex JavaScript solutions and countless workarounds 
+                    can now be achieved with elegant CSS that adapts naturally to different 
+                    screen sizes and user needs.
+                </p>
+
+                <p class="article-text">
+                    Modern layout techniques like Flexbox and CSS Grid have revolutionized 
+                    how we approach responsive design. These tools provide developers with 
+                    unprecedented control over element positioning, sizing, and alignment 
+                    without sacrificing flexibility or maintainability.
+                </p>
+
+                <blockquote class="pull-quote">
+                    "The best layouts are those that adapt to content, not the other way around."
+                </blockquote>
+
+                <p class="article-text">
+                    One of the most significant shifts in web layout philosophy is the move 
+                    away from pixel-perfect designs toward content-aware, flexible systems. 
+                    Rather than specifying exact dimensions for every element, modern CSS 
+                    encourages us to define relationships and constraints, allowing the browser 
+                    to calculate optimal sizing based on available space and content requirements.
+                </p>
+
+                <p class="article-text">
+                    This approach aligns perfectly with the diverse ecosystem of devices and 
+                    screen sizes that users employ today. From smartphones to tablets to desktop 
+                    monitors to ultra-wide displays, a single layout system can adapt gracefully 
+                    to all these contexts when built on solid foundations.
+                </p>
+
+                <p class="article-text">
+                    Container queries represent the next evolution in responsive design, 
+                    allowing components to respond to their container size rather than viewport 
+                    size. This makes truly modular components possible, where the same card or 
+                    widget can appear in a narrow sidebar or wide content area and adapt its 
+                    layout accordingly.
+                </p>
+
+                <blockquote class="pull-quote">
+                    "Responsive design is not just about screen sizes anymore. It's about creating 
+                    systems that work in any context."
+                </blockquote>
+
+                <p class="article-text">
+                    Looking forward, the integration of these layout tools with other modern 
+                    CSS features like custom properties, logical properties, and advanced 
+                    color spaces promises even more powerful design possibilities. The web 
+                    platform continues to mature, giving designers and developers tools that 
+                    rival and often exceed what's possible in traditional design applications.
+                </p>
+
+                <p class="article-text">
+                    As we embrace these new capabilities, it's important to remember that the 
+                    goal remains unchanged: creating experiences that are accessible, performant, 
+                    and delightful for all users, regardless of how they access our content.
+                </p>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="article-sidebar">
+                <!-- Related Articles -->
+                <section class="sidebar-section">
+                    <h2 class="sidebar-title">Related Articles</h2>
+                    
+                    <article class="related-article">
+                        <img src="https://placehold.co/80x60/0066cc/ffffff?text=1" 
+                             alt="" 
+                             class="related-article-thumbnail">
+                        <div class="related-article-content">
+                            <h3 class="related-article-title">
+                                CSS Grid: Beyond the Basics
+                            </h3>
+                            <time class="related-article-date">Jan 15, 2026</time>
+                        </div>
+                    </article>
+
+                    <article class="related-article">
+                        <img src="https://placehold.co/80x60/3385d6/ffffff?text=2" 
+                             alt="" 
+                             class="related-article-thumbnail">
+                        <div class="related-article-content">
+                            <h3 class="related-article-title">
+                                Container Queries in Production
+                            </h3>
+                            <time class="related-article-date">Jan 22, 2026</time>
+                        </div>
+                    </article>
+
+                    <article class="related-article">
+                        <img src="https://placehold.co/80x60/004d99/ffffff?text=3" 
+                             alt="" 
+                             class="related-article-thumbnail">
+                        <div class="related-article-content">
+                            <h3 class="related-article-title">
+                                Responsive Typography Techniques
+                            </h3>
+                            <time class="related-article-date">Jan 29, 2026</time>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Tags -->
+                <section class="sidebar-section">
+                    <h2 class="sidebar-title">Topics</h2>
+                    <div>
+                        <span class="btn btn-small btn-outline" style="margin-right: var(--spacing-xs); margin-bottom: var(--spacing-xs);">CSS</span>
+                        <span class="btn btn-small btn-outline" style="margin-right: var(--spacing-xs); margin-bottom: var(--spacing-xs);">Flexbox</span>
+                        <span class="btn btn-small btn-outline" style="margin-right: var(--spacing-xs); margin-bottom: var(--spacing-xs);">Grid</span>
+                        <span class="btn btn-small btn-outline" style="margin-right: var(--spacing-xs); margin-bottom: var(--spacing-xs);">Responsive</span>
+                        <span class="btn btn-small btn-outline" style="margin-right: var(--spacing-xs); margin-bottom: var(--spacing-xs);">Layout</span>
+                    </div>
+                </section>
+            </aside>
+        </div>
+
+        <!-- Author Bio -->
+        <section class="article-author">
+            <img src="https://placehold.co/100x100/0066cc/ffffff?text=AT" 
+                 alt="Alex Thompson" 
+                 class="author-photo">
+            <div class="author-info">
+                <h2 class="author-name">Alex Thompson</h2>
+                <p class="author-title">Senior Frontend Developer & CSS Specialist</p>
+                <p class="author-bio">
+                    Alex has been building websites for over 15 years and is passionate about 
+                    modern CSS techniques and accessible web design. When not coding, Alex enjoys 
+                    hiking and photography.
+                </p>
+            </div>
+        </section>
+    </article>
+</body>
+</html>

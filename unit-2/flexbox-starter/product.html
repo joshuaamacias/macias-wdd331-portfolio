@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Advanced Flexbox Layouts</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout/product.css">
+</head>
+<body>
+    <div class="product-container">
+        <!-- Product Top Section (Gallery + Info) -->
+        <section class="product-top">
+            <!-- Image Gallery -->
+            <div class="product-gallery">
+                <img src="https://placehold.co/600x400/0066cc/ffffff?text=Main+Product+Image" 
+                     alt="Product main view" 
+                     class="product-main-image">
+                <div class="product-thumbnails">
+                    <img src="https://placehold.co/120x80/0066cc/ffffff?text=View+1" 
+                         alt="Product view 1" 
+                         class="product-thumbnail active">
+                    <img src="https://placehold.co/120x80/3385d6/ffffff?text=View+2" 
+                         alt="Product view 2" 
+                         class="product-thumbnail">
+                    <img src="https://placehold.co/120x80/004d99/ffffff?text=View+3" 
+                         alt="Product view 3" 
+                         class="product-thumbnail">
+                    <img src="https://placehold.co/120x80/0066cc/ffffff?text=View+4" 
+                         alt="Product view 4" 
+                         class="product-thumbnail">
+                </div>
+            </div>
+
+            <!-- Product Info Panel -->
+            <div class="product-info">
+                <h1 class="product-title">Premium Wireless Headphones</h1>
+                <div class="product-price">$299.99</div>
+                <p class="product-description">
+                    Experience superior sound quality with our premium wireless headphones. 
+                    Featuring active noise cancellation, 30-hour battery life, and premium 
+                    comfort for all-day wear. Perfect for music lovers, commuters, and 
+                    professionals who demand the best audio experience.
+                </p>
+                <div class="product-actions">
+                    <button class="btn btn-primary btn-large">Add to Cart</button>
+                    <button class="btn btn-outline">Add to Wishlist</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications Section -->
+        <section class="product-specs">
+            <h2>Technical Specifications</h2>
+            <ul class="specs-list">
+                <li class="spec-item">
+                    <span class="spec-label">Driver Size</span>
+                    <span class="spec-value">40mm Dynamic Drivers</span>
+                </li>
+                <li class="spec-item">
+                    <span class="spec-label">Frequency Response</span>
+                    <span class="spec-value">20Hz - 20kHz</span>
+                </li>
+                <li class="spec-item">
+                    <span class="spec-label">Battery Life</span>
+                    <span class="spec-value">30 hours (ANC on)</span>
+                </li>
+                <li class="spec-item">
+                    <span class="spec-label">Connectivity</span>
+                    <span class="spec-value">Bluetooth 5.0</span>
+                </li>
+                <li class="spec-item">
+                    <span class="spec-label">Weight</span>
+                    <span class="spec-value">250g</span>
+                </li>
+                <li class="spec-item">
+                    <span class="spec-label">Warranty</span>
+                    <span class="spec-value">2 Years</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="product-reviews">
+            <h2>Customer Reviews</h2>
+            
+            <article class="review">
+                <div class="review-avatar" aria-label="Customer avatar"></div>
+                <div class="review-content">
+                    <h3 class="review-author">Sarah Johnson</h3>
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">
+                        These headphones are absolutely fantastic! The sound quality is incredible 
+                        and the noise cancellation works better than I expected. I use them daily 
+                        for work calls and music, and the battery life easily gets me through 
+                        multiple days of use.
+                    </p>
+                </div>
+            </article>
+
+            <article class="review">
+                <div class="review-avatar" aria-label="Customer avatar"></div>
+                <div class="review-content">
+                    <h3 class="review-author">Michael Chen</h3>
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">
+                        Great headphones overall. The build quality feels premium and they're 
+                        very comfortable even after hours of wear. My only minor complaint is 
+                        that the carrying case could be a bit more compact, but that's a small 
+                        trade-off for such excellent sound quality.
+                    </p>
+                </div>
+            </article>
+
+            <article class="review">
+                <div class="review-avatar" aria-label="Customer avatar"></div>
+                <div class="review-content">
+                    <h3 class="review-author">Emily Rodriguez</h3>
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">
+                        Best purchase I've made this year! The active noise cancellation makes 
+                        my commute so much more enjoyable. The Bluetooth connection is stable 
+                        and pairing with multiple devices is seamless. Highly recommend!
+                    </p>
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
+</html>

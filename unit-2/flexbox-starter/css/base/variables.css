@@ -1,0 +1,73 @@
+/**
+ * CSS Custom Properties
+ * Define all design tokens here for consistent styling
+ */
+
+:root {
+    /* Colors */
+    --color-primary: #0066cc;
+    --color-primary-light: #3385d6;
+    --color-primary-dark: #004d99;
+    
+    --color-secondary: #6c757d;
+    --color-secondary-light: #8a939b;
+    --color-secondary-dark: #4e555b;
+    
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-info: #17a2b8;
+    
+    --color-text: #212529;
+    --color-text-muted: #6c757d;
+    --color-background: #ffffff;
+    --color-surface: #f8f9fa;
+    --color-border: #dee2e6;
+    
+    /* Typography */
+    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-mono: 'Courier New', Courier, monospace;
+    
+    --font-size-small: 1.4rem;
+    --font-size-base: 1.6rem;
+    --font-size-med: 1.8rem;
+    --font-size-large: 2.4rem;
+    --font-size-xlarge: 3.2rem;
+    --font-size-xxlarge: 4.8rem;
+    
+    --line-height-tight: 1.2;
+    --line-height-base: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    
+    /* Spacing */
+    --spacing-xs: 0.4rem;
+    --spacing-sm: 0.8rem;
+    --spacing-med: 1.6rem;
+    --spacing-lg: 2.4rem;
+    --spacing-xl: 3.2rem;
+    --spacing-xxl: 4.8rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.4rem;
+    --radius-med: 0.8rem;
+    --radius-lg: 1.6rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-med: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+    
+    /* Layout */
+    --container-max-width: 1200px;
+    --sidebar-width: 250px;
+    --header-height: 60px;
+}
