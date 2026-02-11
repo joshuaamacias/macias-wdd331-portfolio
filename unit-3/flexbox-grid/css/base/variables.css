@@ -1,0 +1,68 @@
+/**
+ * CSS Custom Properties
+ * Design tokens for the photography portfolio
+ */
+
+:root {
+    /* Colors */
+    --color-primary: #2563eb;
+    --color-primary-light: #60a5fa;
+    --color-primary-dark: #1e40af;
+    
+    --color-accent: #8b5cf6;
+    --color-accent-light: #a78bfa;
+    
+    --color-text: #1e293b;
+    --color-text-muted: #64748b;
+    --color-background: #ffffff;
+    --color-surface: #f8fafc;
+    --color-border: #e2e8f0;
+    
+    /* Typography */
+    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-display: 'Georgia', 'Times New Roman', serif;
+    
+    --font-size-sm: 1.4rem;
+    --font-size-med: 1.6rem;
+    --font-size-lg: 1.8rem;
+    --font-size-xl: 2.4rem;
+    --font-size-xxl: 3.2rem;
+    --font-size-xxxl: 4.8rem;
+    
+    --line-height-tight: 1.25;
+    --line-height-med: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Spacing */
+    --spacing-xs: 0.4rem;
+    --spacing-sm: 0.8rem;
+    --spacing-med: 1.6rem;
+    --spacing-lg: 2.4rem;
+    --spacing-xl: 3.2rem;
+    --spacing-xxl: 4.8rem;
+    --spacing-xxxl: 6.4rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.4rem;
+    --radius-med: 0.8rem;
+    --radius-lg: 1.6rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-med: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-med: 250ms ease;
+    --transition-slow: 350ms ease;
+    
+    /* Layout */
+    --content-max-width: 1400px;
+    --nav-height: 70px;
+}
