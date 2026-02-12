@@ -1,0 +1,118 @@
+/**
+ * Portfolio Layout
+ * 
+ * TODO: Implement subgrid for perfect content alignment across cards
+ * 
+ * Key Requirements:
+ * - Use auto-fit for responsive columns
+ * - Define explicit row tracks on parent
+ * - Use subgrid for card row alignment
+ * - Add align-self: start for description
+ * - Wrap subgrid in @supports for progressive enhancement
+ */
+
+/* ===========================================
+   PAGE STRUCTURE
+   =========================================== */
+body {
+    background: var(--color-background);
+}
+
+.portfolio-page {
+    min-height: 100vh;
+}
+
+/* ===========================================
+   HEADER
+   =========================================== */
+.portfolio-header {
+    background: var(--color-surface);
+    border-bottom: 3px solid var(--color-primary);
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.portfolio-header h1 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.portfolio-header p {
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* ===========================================
+   PORTFOLIO GRID
+   =========================================== */
+.portfolio-section {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* ===========================================
+   PORTFOLIO CARD (Fallback)
+   =========================================== */
+/*
+   Default behavior without subgrid support.
+   Cards still work but internal alignment across cards is not perfect.
+*/
+.portfolio-card {
+    display: grid;
+    grid-template-rows: auto 250px 1fr auto;
+    gap: var(--spacing-sm);
+
+    background: var(--color-surface);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-med);
+    box-shadow: var(--shadow-sm);
+}
+
+.portfolio-card-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+}
+
+.portfolio-card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.portfolio-card-description {
+    font-size: var(--font-size-med);
+    color: var(--color-text-muted);
+    line-height: var(--line-height-lg);
+
+    /* Keeps description anchored to top of flexible row */
+    align-self: start;
+}
+
+.portfolio-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-sm);
+}
+
+/* ===========================================
+   SUBGRID ENHANCEMENT
+   =========================================== */
+@supports (grid-template-rows: subgrid) {
+    .portfolio-grid {
+        grid-auto-rows: auto 250px 1fr auto;
+    }
+
+    .portfolio-card {
+        grid-row: span 4;
+        grid-template-rows: subgrid;
+    }
+}

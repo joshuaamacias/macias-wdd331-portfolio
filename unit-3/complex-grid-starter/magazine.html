@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Layout - Grid Areas Practice</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="magazine-page">
+    
+    <header class="magazine-header">
+        <h1 class="site-title">
+            The Grid Times
+        </h1>
+        <p class="site-tagline">
+            Modern layouts for modern developers
+        </p>
+    </header>
+
+    <main class="magazine-container">
+        
+        <section class="feature-section">
+            <img src="https://picsum.photos/1200/600?random=1" alt="Featured article" class="feature-image">
+            <div class="feature-content">
+                <h2>
+                    Mastering Grid Template Areas
+                </h2>
+                <p>
+                    Grid template areas provide a visual, semantic way to define layout regions. By naming areas and positioning elements into those named regions, you create maintainable layouts that match your mental model of the design. This feature article demonstrates how overlapping content creates engaging magazine-style layouts.
+                </p>
+                <button class="btn btn-primary">
+                    Read More
+                </button>
+            </div>
+        </section>
+
+        <article class="article-section">
+            <h2>
+                Understanding Named Grid Lines
+            </h2>
+            <p>
+                Named grid lines extend the power of CSS Grid by letting you define meaningful names for the lines that separate tracks. Instead of referring to line numbers like "column line 3", you can use semantic names like "content-start" or "sidebar-end". This makes your CSS more readable and maintainable, especially in complex layouts.
+            </p>
+            <p>
+                The syntax might look unusual at first, but it follows a logical pattern. When defining tracks, you place line names in square brackets before the track size. For example: <code>[content-start] 1fr [content-end]</code> creates a 1fr track with named lines on either side. You can then position items using these names: <code>grid-column: content-start / content-end</code>.
+            </p>
+            <p>
+                Named lines become especially valuable when creating full-bleed layouts where some content should span the entire viewport width while other content stays constrained to a narrower measure. By naming lines like "full-start", "content-start", "content-end", and "full-end", you can precisely control which elements break out of the content area and which stay contained.
+            </p>
+            <p>
+                Consider the feature section above. The background image spans the full width, but the overlay text stays within a comfortable reading width. Named grid lines make this pattern trivial to implement and modify. You define your layout structure once with meaningful names, then position elements by referring to those semantic labels rather than counting grid lines.
+            </p>
+        </article>
+
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3>
+                    Quick Tip
+                </h3>
+                <p>
+                    Grid template areas must form a rectangle. You cannot create L-shaped or T-shaped areas, but you can use dots (.) to indicate empty cells.
+                </p>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>
+                    Browser Support
+                </h3>
+                <p>
+                    Grid template areas and named grid lines have excellent browser support, working in all modern browsers including mobile Safari and Chrome.
+                </p>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>
+                    Related Reading
+                </h3>
+                <p>
+                    Learn more about CSS Grid by exploring subgrid for nested alignment and auto-fit for responsive layouts without media queries.
+                </p>
+            </div>
+        </aside>
+
+    </main>
+
+</body>
+</html>

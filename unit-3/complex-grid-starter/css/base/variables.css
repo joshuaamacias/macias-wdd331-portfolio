@@ -1,0 +1,71 @@
+/**
+ * CSS Custom Properties
+ * Design tokens for consistent styling
+ */
+
+:root {
+    /* Colors */
+    --color-primary: #3b82f6;
+    --color-primary-light: #60a5fa;
+    --color-primary-dark: #1e40af;
+    
+    --color-accent: #8b5cf6;
+    --color-accent-light: #a78bfa;
+    
+    --color-text: #1e293b;
+    --color-text-muted: #64748b;
+    --color-background: #f8fafc;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    
+    /* Spacing */
+    --spacing-xs: 0.4rem;
+    --spacing-sm: 0.8rem;
+    --spacing-med: 1.6rem;
+    --spacing-lg: 2.4rem;
+    --spacing-xl: 3.2rem;
+    --spacing-xxl: 4.8rem;
+    --spacing-xxxl: 6.4rem;
+    
+    /* Typography */
+    --font-family-base: system-ui, -apple-system, sans-serif;
+    --font-family-display: 'Georgia', serif;
+    --font-family-mono: 'Consolas', 'Monaco', monospace;
+    
+    --font-size-sm: 1.4rem;
+    --font-size-med: 1.6rem;
+    --font-size-lg: 1.8rem;
+    --font-size-xl: 2.4rem;
+    --font-size-xxl: 3.2rem;
+    --font-size-xxxl: 4.8rem;
+    
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    
+    --line-height-sm: 1.2;
+    --line-height-med: 1.6;
+    --line-height-lg: 1.8;
+    
+    /* Layout */
+    --content-max-width: 1200px;
+    --content-narrow: 800px;
+    
+    /* Border Radius */
+    --radius-sm: 0.4rem;
+    --radius-med: 0.8rem;
+    --radius-lg: 1.6rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-med: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+}

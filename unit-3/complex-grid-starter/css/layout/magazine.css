@@ -1,0 +1,241 @@
+/**
+ * Magazine Layout
+ * 
+ * TODO: Implement a magazine-style layout using:
+ * 1. Grid Template Areas - Define semantic layout areas
+ * 2. Named Grid Lines - Use named lines for precise positioning
+ * 3. Overlapping Content - Feature image overlaps with content area
+ * 
+ * Key Requirements:
+ * - Use grid-template-areas for the main layout structure
+ * - Name your grid lines for precise control
+ * - Make the feature section overlap using named lines
+ * - Make responsive (stack on mobile)
+ */
+
+/* ===========================================
+   PAGE STRUCTURE
+   =========================================== */
+body {
+    background: var(--color-background);
+}
+
+.magazine-page {
+    min-height: 100vh;
+}
+
+/* ===========================================
+   HEADER
+   =========================================== */
+.magazine-header {
+    background: var(--color-surface);
+    border-bottom: 3px solid var(--color-primary);
+    padding: var(--spacing-lg);
+}
+
+.site-title {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-xxl);
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.site-tagline {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-med);
+    margin-top: var(--spacing-sm);
+}
+
+/* ===========================================
+   MAIN LAYOUT
+   =========================================== */
+.magazine-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    
+    /* 
+       TODO: Create a grid layout using grid-template-areas
+       
+       Desktop layout should look like:
+       ┌─────────────────────────────┐
+       │         feature             │  (spans full width)
+       ├─────────────┬───────────────┤
+       │   article   │   sidebar     │
+       └─────────────┴───────────────┘
+       
+       Define areas: "feature feature"
+                     "article sidebar"
+       
+       Set column sizes: 2fr for article, 1fr for sidebar
+       Add gap between areas
+    */
+    display: grid;
+    grid-template-areas:
+        "feature feature"
+        "article sidebar";
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+/* ===========================================
+   FEATURE SECTION (Overlapping Layout)
+   =========================================== */
+.feature-section {
+    /* TODO: Assign to grid area "feature" */
+    grid-area: feature;
+    
+    /*
+       TODO: Create a nested grid using NAMED GRID LINES
+       
+       Use named lines like:
+       grid-template-columns: [full-start] 1fr [content-start] 2fr [content-end] 1fr [full-end];
+       grid-template-rows: [top] 300px [middle] 200px [bottom];
+       
+       This allows precise positioning with line names instead of numbers
+    */
+    display: grid;
+    grid-template-columns:
+        [full-start] 1fr
+        [content-start] 2fr
+        [content-end] 1fr
+        [full-end];
+    grid-template-rows:
+    [top] 300px
+    [middle] auto
+    [bottom];
+    align-items: stretch;
+}
+
+.feature-image {
+    /* 
+       TODO: Position using named grid lines
+       Hint: grid-column: full-start / full-end;
+             grid-row: top / bottom;
+    */
+    grid-column: full-start / full-end;
+    grid-row: top / bottom;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
+.feature-content {
+    align-self: end;
+    background: rgba(255, 255, 255, 0.95);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-med);
+    box-shadow: var(--shadow-lg);
+    
+    /*
+       TODO: Position using named grid lines to overlap the image
+       Hint: grid-column: content-start / content-end;
+             grid-row: middle / bottom;
+       
+       This creates the overlapping magazine effect!
+    */
+    grid-column: content-start / content-end;
+    grid-row: middle / bottom;
+    z-index: 1;
+}
+
+.feature-content h2 {
+    margin-bottom: var(--spacing-med);
+    color: var(--color-primary);
+}
+
+/* ===========================================
+   ARTICLE SECTION
+   =========================================== */
+.article-section {
+    /* TODO: Assign to grid area "article" */
+    grid-area: article;
+
+    background: var(--color-surface);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-med);
+}
+
+.article-section h2 {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-med);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.article-section p {
+    margin-bottom: var(--spacing-lg);
+    line-height: var(--line-height-lg);
+}
+
+/* ===========================================
+   SIDEBAR
+   =========================================== */
+.sidebar {
+    /* TODO: Assign to grid area "sidebar" */
+    grid-area: sidebar;
+}
+
+.sidebar-card {
+    background: var(--color-surface);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-med);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid var(--color-accent);
+}
+
+.sidebar-card h3 {
+    margin-bottom: var(--spacing-med);
+    color: var(--color-accent);
+}
+
+.sidebar-card p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+/*
+   TODO: Add mobile breakpoint
+   
+   On mobile (max-width: 768px):
+   - Change grid-template-areas to stack vertically:
+     "feature"
+     "article"
+     "sidebar"
+   - Change to single column: grid-template-columns: 1fr;
+   
+   For feature section on mobile:
+   - Simplify the grid (no overlapping)
+   - Stack image and content vertically
+*/
+@media (max-width: 48rem) {
+    .magazine-container {
+        grid-template-areas:
+            "feature"
+            "article"
+            "sidebar";
+        grid-template-columns: 1fr;
+    }
+
+    .feature-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: var(--spacing-lg);
+    }
+
+    .feature-image {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .feature-content {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        z-index: auto;
+    }
+}

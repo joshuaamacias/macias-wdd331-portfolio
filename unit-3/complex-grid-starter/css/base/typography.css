@@ -1,0 +1,37 @@
+/**
+ * Typography Styles
+ * Base typography settings
+ */
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-med);
+    line-height: var(--line-height-med);
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: var(--line-height-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: var(--font-size-xxxl);
+}
+
+h2 {
+    font-size: var(--font-size-xxl);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+p {
+    margin-bottom: var(--spacing-med);
+}
+
+strong {
+    font-weight: var(--font-weight-bold);
+}
