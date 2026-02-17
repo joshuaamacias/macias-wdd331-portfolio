@@ -1,6 +1,33 @@
-/* style.css */
+/* ===============================
+   THEME VARIABLES
+   =============================== */
 
-/* Basic reset */
+:root {
+  --bg-gradient: linear-gradient(135deg, #f4f6ff, #eef2ff);
+  --text: #1e293b;
+  --panel: #ffffff;
+  --panel-alt: #f8fafc;
+  --border: #e2e8f0;
+  --muted: #64748b;
+  --link: #2563eb;
+  --shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+body.dark {
+  --bg-gradient: linear-gradient(135deg, #0f172a, #111827);
+  --text: #e2e8f0;
+  --panel: #1e293b;
+  --panel-alt: #273449;
+  --border: #334155;
+  --muted: #94a3b8;
+  --link: #60a5fa;
+  --shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* ===============================
+   BASE RESET
+   =============================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,75 +37,120 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  background: #f7f7f7;
-  color: #222;
+  background: var(--bg-gradient);
+  color: var(--text);
   padding: 24px;
+  transition: background 0.4s ease, color 0.3s ease;
 }
 
-/* Layout */
-header, section, footer {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 24px;
-  border-radius: 12px;
-}
+/* ===============================
+   LAYOUT PANELS
+   =============================== */
 
-/* Spacing between blocks */
 header,
 section,
 footer {
-  margin-bottom: 18px;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  background: var(--panel);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
 }
 
-/* Header */
+/* ===============================
+   HEADER
+   =============================== */
+
+header {
+  position: relative;
+}
+
 header h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 6px;
+  letter-spacing: -0.5px;
 }
 
 header p {
-  color: #555;
+  color: var(--muted);
+  margin-bottom: 10px;
 }
 
-/* Headings */
+/* ===============================
+   TOGGLE BUTTON
+   =============================== */
+
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: var(--panel-alt);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+#theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   HEADINGS
+   =============================== */
+
 h2 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 6px;
 }
 
-/* Paragraphs */
-p {
-  margin-bottom: 12px;
-}
+/* ===============================
+   PROJECT CARDS
+   =============================== */
 
-/* Projects */
 #projects article {
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 12px;
-  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 14px;
+  background: var(--panel-alt);
+  transition: all 0.25s ease;
 }
 
-#projects a {
-  display: inline-block;
-  margin-top: 6px;
+#projects article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   LINKS
+   =============================== */
+
+a {
+  color: var(--link);
   text-decoration: none;
-  color: #0b5fff;
-  font-weight: bold;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
 }
 
-#projects a:hover {
-  text-decoration: underline;
+a:hover {
+  opacity: 0.75;
 }
 
-/* Skills list */
+/* ===============================
+   LISTS (GENERAL)
+   =============================== */
+
 ul {
   padding-left: 18px;
 }
@@ -87,33 +159,82 @@ li {
   margin: 6px 0;
 }
 
-/* Contact links */
-#contact a {
-  color: #0b5fff;
-  text-decoration: none;
+/* ===============================
+   SKILLS AS MINI CARDS
+   =============================== */
+
+#skills ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-#contact a:hover {
-  text-decoration: underline;
+#skills li {
+  margin: 0;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  font-weight: 600;
+  transition: all 0.25s ease;
 }
 
-/* Footer */
+#skills li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   CONTACT
+   =============================== */
+
+#contact p {
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+
 footer {
   text-align: center;
-  color: #666;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-/* Small screens */
+/* ===============================
+   HR LINE
+   =============================== */
+
+hr {
+  max-width: 900px;
+  margin: 25px auto;
+  border: none;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
 @media (max-width: 600px) {
   body {
     padding: 14px;
   }
 
-  header, section, footer {
+  header,
+  section,
+  footer {
     padding: 16px;
   }
 
   header h1 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 }
