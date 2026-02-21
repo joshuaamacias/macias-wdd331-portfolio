@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Analytics Dashboard - Container Queries</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h1>
+                Analytics Dashboard
+            </h1>
+            <p>
+                Real-time performance metrics and insights
+            </p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- ROW 1: 4 stat cards in different width containers -->
+            <div class="widget-container col-narrow">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon blue">
+                            👥
+                        </div>
+                        <div class="stat-card-title">
+                            Total Users
+                        </div>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-value">
+                            24,583
+                        </div>
+                        <div class="stat-card-change positive">
+                            ↑ 12.5%
+                        </div>
+                    </div>
+                    <svg class="stat-card-chart" viewBox="0 0 80 60" preserveAspectRatio="none">
+                        <polyline points="0,50 20,45 40,30 60,35 80,20" fill="none" stroke="#3b82f6" stroke-width="2"/>
+                        <polyline points="0,60 0,50 20,45 40,30 60,35 80,20 80,60" fill="rgba(59, 130, 246, 0.1)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="widget-container col-narrow">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon green">
+                            💰
+                        </div>
+                        <div class="stat-card-title">
+                            Revenue
+                        </div>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-value">
+                            $128.4K
+                        </div>
+                        <div class="stat-card-change positive">
+                            ↑ 8.2%
+                        </div>
+                    </div>
+                    <svg class="stat-card-chart" viewBox="0 0 80 60" preserveAspectRatio="none">
+                        <polyline points="0,40 20,35 40,45 60,25 80,15" fill="none" stroke="#22c55e" stroke-width="2"/>
+                        <polyline points="0,60 0,40 20,35 40,45 60,25 80,15 80,60" fill="rgba(34, 197, 94, 0.1)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="widget-container col-narrow">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon purple">
+                            📦
+                        </div>
+                        <div class="stat-card-title">
+                            Orders
+                        </div>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-value">
+                            1,847
+                        </div>
+                        <div class="stat-card-change positive">
+                            ↑ 23.1%
+                        </div>
+                    </div>
+                    <svg class="stat-card-chart" viewBox="0 0 80 60" preserveAspectRatio="none">
+                        <polyline points="0,45 20,40 40,35 60,30 80,10" fill="none" stroke="#a855f7" stroke-width="2"/>
+                        <polyline points="0,60 0,45 20,40 40,35 60,30 80,10 80,60" fill="rgba(168, 85, 247, 0.1)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="widget-container col-narrow">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon orange">
+                            ⚡
+                        </div>
+                        <div class="stat-card-title">
+                            Conversion
+                        </div>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-value">
+                            3.24%
+                        </div>
+                        <div class="stat-card-change negative">
+                            ↓ 1.8%
+                        </div>
+                    </div>
+                    <svg class="stat-card-chart" viewBox="0 0 80 60" preserveAspectRatio="none">
+                        <polyline points="0,30 20,25 40,35 60,40 80,45" fill="none" stroke="#f97316" stroke-width="2"/>
+                        <polyline points="0,60 0,30 20,25 40,35 60,40 80,45 80,60" fill="rgba(249, 115, 22, 0.1)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- ROW 2: Revenue chart (wide) + Top products (wide) -->
+            <div class="widget-container col-wide">
+                <div class="revenue-chart">
+                    <div class="revenue-chart-header">
+                        <div class="revenue-chart-title">
+                            Revenue Overview
+                        </div>
+                        <div class="revenue-chart-stats">
+                            <div class="revenue-stat">
+                                <div class="revenue-stat-label">
+                                    This Month
+                                </div>
+                                <div class="revenue-stat-value">
+                                    $45.2K
+                                </div>
+                            </div>
+                            <div class="revenue-stat">
+                                <div class="revenue-stat-label">
+                                    Last Month
+                                </div>
+                                <div class="revenue-stat-value">
+                                    $38.1K
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="revenue-chart-visual">
+                        <div class="revenue-bar" style="height: 60%;"></div>
+                        <div class="revenue-bar" style="height: 75%;"></div>
+                        <div class="revenue-bar" style="height: 50%;"></div>
+                        <div class="revenue-bar" style="height: 85%;"></div>
+                        <div class="revenue-bar" style="height: 70%;"></div>
+                        <div class="revenue-bar" style="height: 90%;"></div>
+                        <div class="revenue-bar" style="height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget-container col-wide">
+                <div class="top-products">
+                    <div class="top-products-header">
+                        Top Products
+                    </div>
+                    <div class="product-list">
+                        <div class="product-item">
+                            <div class="product-image">
+                                💻
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">
+                                    MacBook Pro 16"
+                                </div>
+                                <div class="product-category">
+                                    Electronics
+                                </div>
+                            </div>
+                            <div class="product-stat">
+                                <div class="product-stat-label">
+                                    Sales
+                                </div>
+                                <div class="product-stat-value">
+                                    248
+                                </div>
+                            </div>
+                            <div class="product-stat">
+                                <div class="product-stat-label">
+                                    Revenue
+                                </div>
+                                <div class="product-stat-value">
+                                    $12.4K
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-image">
+                                🎧
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">
+                                    AirPods Pro
+                                </div>
+                                <div class="product-category">
+                                    Audio
+                                </div>
+                            </div>
+                            <div class="product-stat">
+                                <div class="product-stat-label">
+                                    Sales
+                                </div>
+                                <div class="product-stat-value">
+                                    532
+                                </div>
+                            </div>
+                            <div class="product-stat">
+                                <div class="product-stat-label">
+                                    Revenue
+                                </div>
+                                <div class="product-stat-value">
+                                    $8.2K
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-image">
+                                ⌚
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">
+                                    Apple Watch
+                                </div>
+                                <div class="product-category">
+                                    Wearables
+                                </div>
+                            </div>
+                            <div class="product-stat">
+                                <div class="product-stat-label">
+                                    Sales
+                                </div>
+                                <div class="product-stat-value">
+                                    412
+                                </div>
+                            </div>
+                            <div class="product-stat">
+                                <div class="product-stat-label">
+                                    Revenue
+                                </div>
+                                <div class="product-stat-value">
+                                    $7.8K
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-image">
+                                📱
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">
+                                    iPhone 15 Pro
+                                </div>
+                                <div class="product-category">
+                                    Mobile
+                                </div>
+                            </div>
+                            <div class="product-stat">
+                                <div class="product-stat-label">
+                                    Sales
+                                </div>
+                                <div class="product-stat-value">
+                                    328
+                                </div>
+                            </div>
+                            <div class="product-stat">
+                                <div class="product-stat-label">
+                                    Revenue
+                                </div>
+                                <div class="product-stat-value">
+                                    $6.5K
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 3: User activity (wide) + Performance metrics (wide) -->
+            <div class="widget-container col-wide">
+                <div class="user-activity">
+                    <div class="user-activity-header">
+                        <div class="user-activity-title">
+                            Recent Activity
+                        </div>
+                        <select class="user-activity-filter">
+                            <option>Last 24 hours</option>
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                        </select>
+                    </div>
+                    <div class="user-activity-list">
+                        <div class="activity-item">
+                            <div class="activity-item-row">
+                                <div class="activity-avatar">
+                                    SM
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-name">
+                                        Sarah Miller
+                                    </div>
+                                    <div class="activity-action">
+                                        Completed purchase #4829
+                                    </div>
+                                    <span class="activity-time">
+                                        2 minutes ago
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="activity-meta">
+                                <div class="activity-badge">
+                                    $249
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-item-row">
+                                <div class="activity-avatar">
+                                    JD
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-name">
+                                        John Davis
+                                    </div>
+                                    <div class="activity-action">
+                                        Left a 5-star review
+                                    </div>
+                                    <span class="activity-time">
+                                        15 minutes ago
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="activity-meta">
+                                <div class="activity-badge">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-item-row">
+                                <div class="activity-avatar">
+                                    EW
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-name">
+                                        Emma Wilson
+                                    </div>
+                                    <div class="activity-action">
+                                        Started trial subscription
+                                    </div>
+                                    <span class="activity-time">
+                                        1 hour ago
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="activity-meta">
+                                <div class="activity-badge">
+                                    Trial
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget-container col-wide">
+                <div class="performance-metrics">
+                    <div class="performance-header">
+                        Performance Metrics
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">
+                                Page Speed
+                            </div>
+                            <div class="metric-value">
+                                1.2s
+                            </div>
+                            <div class="metric-progress">
+                                <div class="metric-progress-bar" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">
+                                Uptime
+                            </div>
+                            <div class="metric-value">
+                                99.9%
+                            </div>
+                            <div class="metric-progress">
+                                <div class="metric-progress-bar" style="width: 99%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">
+                                Response Time
+                            </div>
+                            <div class="metric-value">
+                                180ms
+                            </div>
+                            <div class="metric-progress">
+                                <div class="metric-progress-bar" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">
+                                Error Rate
+                            </div>
+                            <div class="metric-value">
+                                0.02%
+                            </div>
+                            <div class="metric-progress">
+                                <div class="metric-progress-bar" style="width: 98%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">
+                                API Calls
+                            </div>
+                            <div class="metric-value">
+                                52.4K
+                            </div>
+                            <div class="metric-progress">
+                                <div class="metric-progress-bar" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">
+                                Cache Hit
+                            </div>
+                            <div class="metric-value">
+                                94.2%
+                            </div>
+                            <div class="metric-progress">
+                                <div class="metric-progress-bar" style="width: 94%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">
+                                Bandwidth
+                            </div>
+                            <div class="metric-value">
+                                2.1TB
+                            </div>
+                            <div class="metric-progress">
+                                <div class="metric-progress-bar" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">
+                                Active Users
+                            </div>
+                            <div class="metric-value">
+                                1,243
+                            </div>
+                            <div class="metric-progress">
+                                <div class="metric-progress-bar" style="width: 82%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
