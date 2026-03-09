@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Navigation</title>
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    <link rel="stylesheet" href="css/layout/page.css">
+    <link rel="stylesheet" href="css/components/nav.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/card.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         NAVIGATION HEADER
+         Contains the logo, desktop nav links, and hamburger toggle.
+         The hamburger button is hidden on desktop via nav.css.
+         Do not modify this HTML.
+    ============================================================ -->
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main navigation">
+
+            <a href="#" class="nav-logo">Portfolio</a>
+
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Work</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button
+                class="nav-toggle"
+                aria-expanded="false"
+                aria-controls="slide-menu"
+                aria-label="Open navigation menu"
+            >
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+        </nav>
+    </header>
+
+    <!-- ============================================================
+         SLIDE-OUT MENU
+         Overlays the full page on mobile. JavaScript adds .is-open
+         to both .slide-menu and .slide-overlay when the hamburger
+         is clicked. Your CSS listens for that class change.
+         Do not modify this HTML.
+    ============================================================ -->
+    <div class="slide-overlay" aria-hidden="true"></div>
+
+    <aside class="slide-menu" id="slide-menu" aria-label="Mobile navigation">
+        <button
+            class="slide-menu-close"
+            aria-label="Close navigation menu"
+        >
+            &times;
+        </button>
+        <nav>
+            <ul class="slide-menu-links">
+                <li><a href="#" class="slide-menu-link">Home</a></li>
+                <li><a href="#" class="slide-menu-link">Work</a></li>
+                <li><a href="#" class="slide-menu-link">About</a></li>
+                <li><a href="#" class="slide-menu-link">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- ============================================================
+         MAIN CONTENT
+         Hero, button showcase, and card grid.
+         Do not modify this HTML.
+    ============================================================ -->
+    <main class="page-main">
+
+        <section class="hero">
+            <h1 class="hero-title">Animated UI Components</h1>
+            <p class="hero-body">
+                A showcase of CSS transitions and keyframe animations applied
+                to common interface components.
+            </p>
+            <div class="hero-actions">
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-ghost">Learn More</button>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2 class="section-title">Buttons</h2>
+            <div class="button-row">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-ghost">Ghost</button>
+                <button class="btn btn-icon" aria-label="Favorite">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+                <button class="btn btn-loading" aria-label="Loading">
+                    <span class="loading-spinner"></span>
+                    Loading...
+                </button>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2 class="section-title">Cards</h2>
+            <div class="card-grid">
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/240?random=1" alt="Project one">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">CSS</span>
+                        <h3 class="card-title">Container Queries</h3>
+                        <p class="card-description">
+                            Components that respond to the size of their own container
+                            rather than the viewport, enabling truly modular design.
+                        </p>
+                        <a href="#" class="btn btn-ghost card-cta">View Project</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/240?random=2" alt="Project two">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Layout</span>
+                        <h3 class="card-title">Subgrid Alignment</h3>
+                        <p class="card-description">
+                            Nested elements that participate directly in a parent grid's
+                            track structure, solving cross-card alignment at last.
+                        </p>
+                        <a href="#" class="btn btn-ghost card-cta">View Project</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/240?random=3" alt="Project three">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Color</span>
+                        <h3 class="card-title">oklch Color Space</h3>
+                        <p class="card-description">
+                            Perceptually uniform color that makes programmatic palette
+                            generation predictable and visually consistent.
+                        </p>
+                        <a href="#" class="btn btn-ghost card-cta">View Project</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/240?random=4" alt="Project four">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Animation</span>
+                        <h3 class="card-title">Scroll-Driven Motion</h3>
+                        <p class="card-description">
+                            Tie animation progress to scroll position using
+                            <code>animation-timeline</code> with no JavaScript required.
+                        </p>
+                        <a href="#" class="btn btn-ghost card-cta">View Project</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>WDD 331R &mdash; Advanced CSS &mdash; BYU-Idaho</p>
+    </footer>
+
+    <script type="module" src="js/nav.js"></script>
+</body>
+</html>

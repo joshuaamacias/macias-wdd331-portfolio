@@ -1,0 +1,118 @@
+/* buttons.css — Your work goes here. */
+
+/* ============================================================
+   BASE BUTTON
+   ============================================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* ============================================================
+   PRIMARY BUTTON
+   ============================================================ */
+
+.btn-primary {
+    background: var(--color-accent);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-accent-hover);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================================
+   GHOST BUTTON
+   ============================================================ */
+
+.btn-ghost {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    transition:
+        background var(--transition-base),
+        color var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.btn-ghost:hover {
+    background: var(--color-surface-raised);
+    color: var(--color-text);
+    border-color: var(--color-accent);
+}
+
+/* ============================================================
+   ICON BUTTON
+   ============================================================ */
+
+.btn-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    transition: transform var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}
+
+.btn-icon:hover {
+    transform: scale(1.1);
+    color: var(--color-accent-light);
+    border-color: var(--color-accent);
+}
+
+/* ============================================================
+   LOADING BUTTON
+   ============================================================ */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-loading {
+    background: var(--color-surface-raised);
+    color: var(--color-text-muted);
+    box-shadow: var(--shadow-sm);
+    cursor: default;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.loading-spinner {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+    border-top-color: var(--color-accent-light);
+    animation: spin 700ms linear infinite;
+}

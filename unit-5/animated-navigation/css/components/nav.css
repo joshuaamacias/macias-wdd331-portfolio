@@ -1,0 +1,237 @@
+/* nav.css — Your work goes here. */
+
+/* ============================================================
+   SITE HEADER
+   ============================================================ */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background: rgb(26 29 39 / 0.9);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+/* ============================================================
+   SITE NAV
+   ============================================================ */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-accent-light);
+}
+
+/* ============================================================
+   DESKTOP NAV LINKS
+   ============================================================ */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    transition: color var(--transition-base);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+    color: var(--color-text);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ============================================================
+   HAMBURGER BUTTON
+   ============================================================ */
+
+.nav-toggle {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 999px;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ============================================================
+   SLIDE-OUT MENU PANEL
+   ============================================================ */
+
+.slide-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: var(--slide-menu-width);
+    height: 100vh;
+    padding: 2rem;
+    background: var(--color-surface);
+    border-left: 1px solid var(--color-border);
+    z-index: 150;
+    transform: translateX(100%);
+    transition: transform var(--transition-slide);
+}
+
+.slide-menu.is-open {
+    transform: translateX(0);
+}
+
+.slide-menu-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color var(--transition-base);
+}
+
+.slide-menu-close:hover {
+    color: var(--color-text);
+}
+
+/* ============================================================
+   STAGGERED LINK ENTRANCE
+   ============================================================ */
+
+@keyframes link-enter {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.slide-menu-link {
+    opacity: 0;
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    transition: color var(--transition-base);
+}
+
+.slide-menu-link:hover {
+    color: var(--color-text);
+}
+
+.slide-menu.is-open .slide-menu-link {
+    animation: link-enter 250ms ease-out forwards;
+}
+
+.slide-menu.is-open .slide-menu-links li:nth-child(1) .slide-menu-link {
+    animation-delay: 0ms;
+}
+
+.slide-menu.is-open .slide-menu-links li:nth-child(2) .slide-menu-link {
+    animation-delay: 50ms;
+}
+
+.slide-menu.is-open .slide-menu-links li:nth-child(3) .slide-menu-link {
+    animation-delay: 100ms;
+}
+
+.slide-menu.is-open .slide-menu-links li:nth-child(4) .slide-menu-link {
+    animation-delay: 150ms;
+}
+
+/* ============================================================
+   OVERLAY
+   ============================================================ */
+
+.slide-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--color-overlay);
+    z-index: 120;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-slide);
+}
+
+.slide-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}
