@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Features Showcase</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/transitions.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="progress-bar"></div>
+        <div class="header-inner">
+            <span class="site-logo">CSS Showcase</span>
+            <nav class="site-nav">
+                <a href="#gallery">Gallery</a>
+                <a href="#features">Features</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <p class="hero-eyebrow">Unit 5 &mdash; Animation Practice</p>
+        <h1 class="hero-title">Modern CSS Features</h1>
+        <p class="hero-description">
+            A curated collection of the CSS features that have reshaped how we build for the web,
+            from container queries to cascade layers to scroll-driven animations.
+        </p>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-header">
+            <h2>Feature Gallery</h2>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="layout">Layout</button>
+                <button class="filter-btn" data-filter="color">Color</button>
+                <button class="filter-btn" data-filter="animation">Animation</button>
+                <button class="filter-btn" data-filter="typography">Typography</button>
+            </div>
+        </div>
+        <div class="card-grid">
+
+            <article class="card" data-category="layout">
+                <img src="https://picsum.photos/400/250?random=1" alt="Container Queries">
+                <div class="card-body">
+                    <span class="card-tag">Layout</span>
+                    <h3 class="card-title">Container Queries</h3>
+                    <p class="card-description">
+                        Components that respond to the size of their container rather than the viewport,
+                        enabling truly modular, context-aware design systems.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="color">
+                <img src="https://picsum.photos/400/250?random=2" alt="oklch Color">
+                <div class="card-body">
+                    <span class="card-tag">Color</span>
+                    <h3 class="card-title">oklch() Color</h3>
+                    <p class="card-description">
+                        A perceptually uniform color space where equal numeric steps produce
+                        equal perceived brightness changes, making programmatic color manipulation predictable.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="animation">
+                <img src="https://picsum.photos/400/250?random=3" alt="Scroll-Driven Animations">
+                <div class="card-body">
+                    <span class="card-tag">Animation</span>
+                    <h3 class="card-title">Scroll-Driven Animations</h3>
+                    <p class="card-description">
+                        Tie animation progress directly to scroll position using the
+                        <code>animation-timeline</code> property, with no JavaScript event listeners required.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="typography">
+                <img src="https://picsum.photos/400/250?random=4" alt="text-wrap: balance">
+                <div class="card-body">
+                    <span class="card-tag">Typography</span>
+                    <h3 class="card-title">text-wrap: balance</h3>
+                    <p class="card-description">
+                        Automatically distributes text across lines to eliminate awkward single-word
+                        orphans in headings and short paragraphs.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="layout">
+                <img src="https://picsum.photos/400/250?random=5" alt="Subgrid">
+                <div class="card-body">
+                    <span class="card-tag">Layout</span>
+                    <h3 class="card-title">Subgrid</h3>
+                    <p class="card-description">
+                        Lets nested elements participate in a parent grid's tracks, solving the
+                        long-standing problem of aligning content deep inside card components.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="color">
+                <img src="https://picsum.photos/400/250?random=6" alt="color-mix()">
+                <div class="card-body">
+                    <span class="card-tag">Color</span>
+                    <h3 class="card-title">color-mix()</h3>
+                    <p class="card-description">
+                        Mix two colors in any color space directly in CSS, enabling tints, shades,
+                        and blends that previously required a preprocessor or JavaScript.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="animation">
+                <img src="https://picsum.photos/400/250?random=7" alt="View Transitions API">
+                <div class="card-body">
+                    <span class="card-tag">Animation</span>
+                    <h3 class="card-title">View Transitions API</h3>
+                    <p class="card-description">
+                        Animate between DOM states or page navigations with a snapshot-based
+                        cross-fade that the browser handles automatically.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="typography">
+                <img src="https://picsum.photos/400/250?random=8" alt="Variable Fonts">
+                <div class="card-body">
+                    <span class="card-tag">Typography</span>
+                    <h3 class="card-title">Variable Fonts</h3>
+                    <p class="card-description">
+                        A single font file that exposes adjustable axes like weight, width, and slant,
+                        reducing HTTP requests while expanding typographic control.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="layout">
+                <img src="https://picsum.photos/400/250?random=9" alt="Cascade Layers">
+                <div class="card-body">
+                    <span class="card-tag">Layout</span>
+                    <h3 class="card-title">Cascade Layers</h3>
+                    <p class="card-description">
+                        Explicit layers of specificity that let you structure your CSS so
+                        utility classes and overrides no longer require specificity wars.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="color">
+                <img src="https://picsum.photos/400/250?random=10" alt="light-dark()">
+                <div class="card-body">
+                    <span class="card-tag">Color</span>
+                    <h3 class="card-title">light-dark()</h3>
+                    <p class="card-description">
+                        A CSS function that returns one of two values depending on the current
+                        color scheme, collapsing what used to require two separate media query blocks.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="animation">
+                <img src="https://picsum.photos/400/250?random=11" alt="Web Animations API">
+                <div class="card-body">
+                    <span class="card-tag">Animation</span>
+                    <h3 class="card-title">Web Animations API</h3>
+                    <p class="card-description">
+                        A JavaScript interface for creating and controlling animations with the same
+                        performance characteristics as CSS animations, plus programmatic playback control.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card" data-category="typography">
+                <img src="https://picsum.photos/400/250?random=12" alt="font-size-adjust">
+                <div class="card-body">
+                    <span class="card-tag">Typography</span>
+                    <h3 class="card-title">font-size-adjust</h3>
+                    <p class="card-description">
+                        Normalizes the perceived size of fallback fonts so text remains consistently
+                        readable during the brief window before a web font loads.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="features">
+
+        <section class="feature-section feature-section--left">
+            <div class="feature-image">
+                <img src="https://picsum.photos/600/420?random=20" alt="Layout features">
+            </div>
+            <div class="feature-content">
+                <h2>Layout Has Grown Up</h2>
+                <p>
+                    Grid and Flexbox solved the hard problems of page and component layout years ago,
+                    but container queries and subgrid fill in the gaps that remained. Components can now
+                    adapt to their context without any knowledge of the page they live in.
+                </p>
+                <p>
+                    Cascade layers complement this by giving you explicit control over specificity,
+                    so your design system, third-party styles, and utility overrides all coexist
+                    without conflict.
+                </p>
+            </div>
+        </section>
+
+        <section class="feature-section feature-section--right">
+            <div class="feature-image">
+                <img src="https://picsum.photos/600/420?random=21" alt="Color features">
+            </div>
+            <div class="feature-content">
+                <h2>Color Is More Expressive</h2>
+                <p>
+                    The move to perceptually uniform color spaces like oklch means that generating
+                    a color palette programmatically actually looks right. Every step in lightness
+                    reads as the same visual distance to the human eye.
+                </p>
+                <p>
+                    Functions like <code>color-mix()</code> and <code>light-dark()</code> bring
+                    logic directly into CSS that previously required a build tool or multiple
+                    media query blocks to express.
+                </p>
+            </div>
+        </section>
+
+        <section class="feature-section feature-section--left">
+            <div class="feature-image">
+                <img src="https://picsum.photos/600/420?random=22" alt="Animation features">
+            </div>
+            <div class="feature-content">
+                <h2>Animation Without JavaScript</h2>
+                <p>
+                    Scroll-linked animations used to mean attaching a scroll event listener,
+                    calculating offsets on every frame, and hoping the main thread was free.
+                    Scroll-driven animations replace all of that with two CSS properties.
+                </p>
+                <p>
+                    The View Transitions API handles the JavaScript side of animated state changes,
+                    leaving CSS to define how the transition looks via the
+                    <code>::view-transition-old</code> and <code>::view-transition-new</code>
+                    pseudo-elements.
+                </p>
+            </div>
+        </section>
+
+        <section class="feature-section feature-section--right">
+            <div class="feature-image">
+                <img src="https://picsum.photos/600/420?random=23" alt="Typography features">
+            </div>
+            <div class="feature-content">
+                <h2>Typography Details Matter</h2>
+                <p>
+                    Small typographic improvements like <code>text-wrap: balance</code> are the
+                    kind of polish that designers have always wanted but had to fake with manual
+                    line breaks or JavaScript. Now a single property handles it automatically.
+                </p>
+                <p>
+                    Variable fonts and <code>font-size-adjust</code> address performance and
+                    consistency concerns that were previously impossible to solve purely in CSS,
+                    removing another category of JavaScript workarounds entirely.
+                </p>
+            </div>
+        </section>
+
+    </section>
+
+    <footer class="site-footer">
+        <p>WDD 331R &mdash; Advanced CSS &mdash; BYU-Idaho</p>
+    </footer>
+
+    <script type="module" src="js/gallery.js"></script>
+</body>
+</html>
