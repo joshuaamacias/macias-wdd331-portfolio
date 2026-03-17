@@ -116,9 +116,11 @@ li {
 }
 
 .nav-inner {
+  position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 14px 20px;
+  padding-bottom: 24px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--panel);
@@ -150,6 +152,38 @@ li {
 
 .nav-links a:hover {
   color: var(--heading);
+}
+
+.progress-track {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 6px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.18);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent-strong), var(--link-hover));
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: progress-fill linear;
+  animation-timeline: scroll(root block);
+  animation-fill-mode: both;
+}
+
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* ===============================
@@ -449,6 +483,78 @@ li {
 }
 
 /* ===============================
+   SCROLL-DRIVEN REVEALS
+   =============================== */
+
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  animation-timeline: view();
+  animation-range: entry 0% entry 45%;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+.reveal {
+  animation-name: reveal-up;
+}
+
+.reveal-left {
+  animation-name: reveal-left;
+}
+
+.reveal-right {
+  animation-name: reveal-right;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-right {
+  from {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===============================
+   PERFORMANCE POLISH
+   =============================== */
+
+.hero,
+.panel,
+.project-card,
+.unit-card,
+.contact-card,
+.site-footer {
+  will-change: transform, opacity;
+}
+
+/* ===============================
    RESPONSIVE
    =============================== */
 
@@ -469,6 +575,7 @@ li {
 
   .nav-inner {
     padding: 12px 16px;
+    padding-bottom: 26px;
     border-radius: 20px;
     flex-direction: column;
     align-items: flex-start;
@@ -476,6 +583,12 @@ li {
 
   .nav-links {
     gap: 12px;
+  }
+
+  .progress-track {
+    left: 16px;
+    right: 16px;
+    bottom: 8px;
   }
 
   .hero,
@@ -495,5 +608,24 @@ li {
 
   .hero h1 {
     font-size: 2rem;
+  }
+}
+
+/* ===============================
+   REDUCED MOTION
+   =============================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .progress-bar,
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
