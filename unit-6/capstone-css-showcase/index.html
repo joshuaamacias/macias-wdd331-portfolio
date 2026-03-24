@@ -9,6 +9,7 @@
     content="A custom CSS showcase site for Influence featuring responsive layout, motion, visual design, and advanced CSS techniques."
   />
   <meta name="theme-color" content="#050505" />
+
   <script>
     (() => {
       const savedTheme = localStorage.getItem("theme");
@@ -17,12 +18,19 @@
       document.documentElement.dataset.theme = theme;
     })();
   </script>
+
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+  <link rel="icon" href="favicon_io/favicon.ico" />
+  <link rel="manifest" href="favicon_io/site.webmanifest" />
+
+  <script src="script.js" defer></script>
 </head>
+
+
 <body>
   <div class="scroll-progress" aria-hidden="true">
     <span class="scroll-progress__bar" id="progressBar"></span>
@@ -399,27 +407,14 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell site-footer__inner">
-      <div>
-        <p class="site-footer__brand">Influence</p>
-        <p class="site-footer__text">
-          A custom showcase site focused on responsive CSS architecture, visual polish, motion, and accessibility.
-        </p>
-      </div>
-
-      <nav class="site-footer__links" aria-label="Social media links">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-      </nav>
+    <footer class="site-footer">
+    <p>Follow us on social media:</p>
+    <div class="social-links">
+      <a href="#" target="_blank">Instagram</a> |
+      <a href="#" target="_blank">Facebook</a> |
+      <a href="#" target="_blank">Twitter</a>
     </div>
-
-    <p class="site-footer__copyright">
-      &copy; <span id="currentYear">2025</span> Influence
-    </p>
+    <p>&copy; 2025 Influence</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
