@@ -1,0 +1,211 @@
+@layer layout {
+  body {
+    font-family: var(--font-family-base);
+    font-size: var(--fs-400);
+    line-height: 1.6;
+    color: var(--color-text);
+    background:
+      radial-gradient(circle at top right, var(--color-page-glow-1), transparent 28%),
+      radial-gradient(circle at 15% 20%, var(--color-page-glow-2), transparent 18%),
+      linear-gradient(180deg, var(--color-surface-2) 0%, var(--color-bg) 38%, var(--color-surface) 100%);
+  }
+
+  .shell {
+    width: var(--shell-width);
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: var(--space-8);
+  }
+
+  .section--wide {
+    width: var(--shell-wide-width);
+    margin-inline: auto;
+  }
+
+  .site-header {
+    position: relative;
+    overflow: clip;
+    border-bottom: var(--border-soft);
+  }
+
+  .site-header::before,
+  .site-header::after {
+    content: "";
+    position: absolute;
+    inset: auto;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .site-header::before {
+    width: 26rem;
+    height: 26rem;
+    top: -8rem;
+    right: -8rem;
+    background: radial-gradient(circle, var(--color-header-glow-1), transparent 65%);
+    filter: blur(10px);
+    mix-blend-mode: screen;
+  }
+
+  .site-header::after {
+    width: 20rem;
+    height: 20rem;
+    bottom: -9rem;
+    left: -5rem;
+    background: radial-gradient(circle, var(--color-header-glow-2), transparent 62%);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding-block: var(--space-5);
+  }
+
+  .hero {
+    display: grid;
+    gap: var(--space-7);
+    align-items: center;
+    padding-block: var(--space-7) var(--space-8);
+    grid-template-areas:
+      "content"
+      "media";
+  }
+
+  .hero__content {
+    grid-area: content;
+    max-width: 40rem;
+  }
+
+  .hero__media {
+    grid-area: media;
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .category-strip {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: var(--color-sticky-bg);
+    border-bottom: var(--border-soft);
+  }
+
+  .category-strip__list {
+    list-style: none;
+    display: flex;
+    gap: var(--space-3);
+    overflow-x: auto;
+    padding-block: var(--space-4);
+    scrollbar-width: thin;
+  }
+
+  .section-heading {
+    display: grid;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    max-width: 44rem;
+  }
+
+  .features-grid,
+  .testimonials-grid,
+  .pricing-grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .gallery-grid {
+    display: grid;
+    gap: var(--space-5);
+    grid-template-areas:
+      "feature"
+      "secondary-1"
+      "secondary-2";
+  }
+
+  .showcase-card--feature {
+    grid-area: feature;
+  }
+
+  .gallery-grid > :nth-child(2) {
+    grid-area: secondary-1;
+  }
+
+  .gallery-grid > :nth-child(3) {
+    grid-area: secondary-2;
+  }
+
+  .snap-row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(16rem, 84%);
+    gap: var(--space-4);
+    overflow-x: auto;
+    padding-bottom: var(--space-3);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .site-footer {
+    border-top: var(--border-soft);
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-5);
+  }
+
+  .site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 48rem) {
+    .features-grid,
+    .testimonials-grid,
+    .pricing-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1.35fr 1fr;
+      grid-template-areas:
+        "feature secondary-1"
+        "feature secondary-2";
+    }
+
+    .snap-row {
+      grid-auto-columns: minmax(18rem, 38%);
+    }
+
+    .site-footer__inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+  }
+
+  [data-theme="dark"] body {
+  background:
+    radial-gradient(circle at top right, rgba(239, 191, 4, 0.08), transparent 24%),
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.03), transparent 16%),
+    linear-gradient(180deg, #121212 0%, #050505 38%, #0d0d0d 100%);
+}
+
+  @media (min-width: 64rem) {
+    .hero {
+      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-areas: "content media";
+      min-height: calc(100svh - 6rem);
+    }
+
+    .features-grid,
+    .testimonials-grid,
+    .pricing-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}

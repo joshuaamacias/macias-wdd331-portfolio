@@ -1,0 +1,120 @@
+@layer tokens {
+  :root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #050505;
+  --color-surface: #0d0d0d;
+  --color-surface-2: #141414;
+  --color-surface-3: #1d1d1d;
+  --color-text: #f5f2eb;
+  --color-muted: #d0c8bc;
+  --color-line: rgba(255, 255, 255, 0.14);
+  --color-accent: #efbf04;
+  --color-accent-strong: #ffd84d;
+  --color-shadow: rgba(0, 0, 0, 0.42);
+  --color-nav-bg: rgba(14, 14, 14, 0.96);
+  --color-sticky-bg: rgba(10, 10, 10, 0.86);
+  --color-card-bg: rgba(255, 255, 255, 0.06);
+  --color-ghost-bg: rgba(255, 255, 255, 0.04);
+  --color-overlay-strong: rgba(12, 12, 12, 0.78);
+  --color-overlay-gradient-start: rgba(0, 0, 0, 0.14);
+  --color-overlay-gradient-end: rgba(10, 10, 10, 0.9);
+  --color-icon-bg: rgba(239, 191, 4, 0.16);
+  --color-progress-track: rgba(255, 255, 255, 0.1);
+  --color-page-glow-1: rgba(239, 191, 4, 0.1);
+  --color-page-glow-2: rgba(255, 255, 255, 0.035);
+  --color-header-glow-1: rgba(239, 191, 4, 0.16);
+  --color-header-glow-2: rgba(255, 255, 255, 0.04);
+  --color-button-solid-text: #0d0d0d;
+  --color-pill-text: #1d1700;
+  --color-featured-card-start: rgba(239, 191, 4, 0.18);
+  --color-featured-card-end: rgba(255, 255, 255, 0.06);
+  --color-focus-ring: rgba(239, 191, 4, 0.85);
+
+  --font-family-base: Inter, Arial, Helvetica, sans-serif;
+  --font-family-heading: Inter, Arial, Helvetica, sans-serif;
+
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.375rem;
+  --fs-700: clamp(1.75rem, 3vw, 2.5rem);
+  --fs-800: clamp(2.5rem, 5vw, 4.75rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --radius-pill: 999px;
+
+  --shadow-1: 0 12px 30px var(--color-shadow);
+  --shadow-2: 0 24px 60px rgba(0, 0, 0, 0.56);
+
+  --border-soft: 1px solid var(--color-line);
+
+  --shell-width: min(72rem, calc(100% - 2rem));
+  --shell-wide-width: min(78rem, calc(100% - 2rem));
+
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 180ms;
+  --duration-base: 320ms;
+  --duration-slow: 700ms;
+}
+
+  [data-theme="light"] {
+    color-scheme: light;
+    --color-bg: #f7f4ec;
+    --color-surface: #ffffff;
+    --color-surface-2: #f3ede0;
+    --color-surface-3: #ebe2d0;
+    --color-text: #1d1b17;
+    --color-muted: #5b5449;
+    --color-line: rgba(29, 27, 23, 0.12);
+    --color-accent: #b27a00;
+    --color-accent-strong: #e8b935;
+    --color-shadow: rgba(32, 25, 11, 0.12);
+    --color-nav-bg: rgba(255, 252, 246, 0.97);
+    --color-sticky-bg: rgba(247, 244, 236, 0.88);
+    --color-card-bg: rgba(255, 255, 255, 0.78);
+    --color-ghost-bg: rgba(29, 27, 23, 0.03);
+    --color-overlay-strong: rgba(255, 252, 246, 0.86);
+    --color-overlay-gradient-start: rgba(255, 255, 255, 0.2);
+    --color-overlay-gradient-end: rgba(247, 244, 236, 0.92);
+    --color-icon-bg: rgba(178, 122, 0, 0.1);
+    --color-progress-track: rgba(29, 27, 23, 0.08);
+    --color-page-glow-1: rgba(232, 185, 53, 0.22);
+    --color-page-glow-2: rgba(255, 255, 255, 0.9);
+    --color-header-glow-1: rgba(232, 185, 53, 0.3);
+    --color-header-glow-2: rgba(255, 255, 255, 0.9);
+    --color-button-solid-text: #17140d;
+    --color-pill-text: #17140d;
+    --color-featured-card-start: rgba(232, 185, 53, 0.26);
+    --color-featured-card-end: rgba(255, 255, 255, 0.86);
+    --color-focus-ring: rgba(178, 122, 0, 0.7);
+
+    --shadow-1: 0 12px 30px var(--color-shadow);
+    --shadow-2: 0 22px 50px rgba(32, 25, 11, 0.16);
+  }
+
+  @supports (color: oklch(from white l c h)) {
+    :root,
+    [data-theme="dark"] {
+      --color-surface-2: oklch(from var(--color-accent) 0.2 0.02 h / 0.22);
+      --color-icon-bg: oklch(from var(--color-accent) 0.7 0.13 h / 0.14);
+    }
+
+    [data-theme="light"] {
+      --color-surface-2: oklch(from var(--color-accent) 0.95 0.02 h / 0.8);
+      --color-icon-bg: oklch(from var(--color-accent) 0.82 0.12 h / 0.18);
+    }
+  }
+}

@@ -1,0 +1,146 @@
+@layer motion {
+  .button,
+  .site-nav a,
+  .nav-toggle,
+  .nav-toggle__line,
+  .theme-toggle,
+  .theme-toggle__icon,
+  .hero-card,
+  .showcase-card img,
+  .showcase-card,
+  .bundle-card,
+  .feature-card,
+  .category-chip,
+  .price-card,
+  .scroll-progress__bar {
+    transition:
+      transform var(--duration-base) var(--ease-standard),
+      opacity var(--duration-base) var(--ease-standard),
+      background-color var(--duration-base) var(--ease-standard),
+      border-color var(--duration-base) var(--ease-standard),
+      filter var(--duration-base) var(--ease-standard),
+      color var(--duration-base) var(--ease-standard),
+      box-shadow var(--duration-base) var(--ease-standard);
+  }
+
+  .button:hover,
+  .button:focus-visible,
+  .nav-toggle:hover,
+  .nav-toggle:focus-visible,
+  .theme-toggle:hover,
+  .theme-toggle:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .feature-card:hover,
+  .feature-card:focus-within,
+  .bundle-card:hover,
+  .bundle-card:focus-within,
+  .price-card:hover,
+  .price-card:focus-within,
+  .category-chip:hover,
+  .category-chip:focus-within {
+    transform: translateY(-4px);
+    border-color: rgba(239, 191, 4, 0.35);
+    box-shadow: var(--shadow-2);
+  }
+
+  .showcase-card:hover img,
+  .showcase-card:focus-within img,
+  .hero-card--main:hover img,
+  .hero-card--main:focus-within img {
+    transform: scale(1.04);
+    filter: saturate(1.06) contrast(1.03) brightness(0.94);
+  }
+
+  .site-footer__links a:hover,
+  .site-footer__links a:focus-visible,
+  .site-nav a:hover,
+  .site-nav a:focus-visible {
+    color: var(--color-accent);
+  }
+
+  .hero-card--mini {
+    animation: floatCard 4.6s ease-in-out infinite;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(1.1rem);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal--delay {
+    transition-delay: 100ms;
+  }
+
+  .reveal--delay-2 {
+    transition-delay: 160ms;
+  }
+
+  .reveal--delay-3 {
+    transition-delay: 220ms;
+  }
+
+  .reveal--delay-4 {
+    transition-delay: 280ms;
+  }
+
+  .reveal--delay-5 {
+    transition-delay: 340ms;
+  }
+
+  @keyframes floatCard {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .reveal,
+    .reveal.is-visible,
+    .hero-card--mini,
+    .button:hover,
+    .button:focus-visible,
+    .nav-toggle:hover,
+    .nav-toggle:focus-visible,
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible,
+    .feature-card:hover,
+    .feature-card:focus-within,
+    .bundle-card:hover,
+    .bundle-card:focus-within,
+    .price-card:hover,
+    .price-card:focus-within,
+    .category-chip:hover,
+    .category-chip:focus-within,
+    .showcase-card:hover img,
+    .showcase-card:focus-within img,
+    .hero-card--main:hover img,
+    .hero-card--main:focus-within img {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}

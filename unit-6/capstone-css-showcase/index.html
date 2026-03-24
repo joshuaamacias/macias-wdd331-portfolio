@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Influence | Creative Gear Showcase</title>
+  <meta
+    name="description"
+    content="A custom CSS showcase site for Influence featuring responsive layout, motion, visual design, and advanced CSS techniques."
+  />
+  <meta name="theme-color" content="#050505" />
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("theme");
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress__bar" id="progressBar"></span>
+  </div>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="shell site-header__inner">
+      <a class="logo" href="#top">INFLUENCE</a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="siteNav"
+        aria-label="Open navigation menu"
+      >
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#bundles">Bundles</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch to light mode"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle__icons" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="theme-toggle__icon theme-toggle__icon--sun">
+              <path d="M12 4.75a.75.75 0 0 1 .75.75v1.1a.75.75 0 0 1-1.5 0V5.5a.75.75 0 0 1 .75-.75Zm0 11.65a.75.75 0 0 1 .75.75v1.35a.75.75 0 0 1-1.5 0v-1.35a.75.75 0 0 1 .75-.75Zm7.25-4.4a.75.75 0 0 1 .75.75a.75.75 0 0 1-.75.75H18.1a.75.75 0 0 1 0-1.5h1.15ZM5.9 12a.75.75 0 0 1 0 1.5H4.75a.75.75 0 0 1 0-1.5H5.9Zm10.02-5.27.81-.82a.75.75 0 1 1 1.06 1.06l-.82.82a.75.75 0 0 1-1.05-1.06Zm-9.64 9.64.82-.81a.75.75 0 1 1 1.06 1.05l-.82.82a.75.75 0 1 1-1.06-1.06Zm10.7 1.06a.75.75 0 0 1-1.06 0l-.81-.82a.75.75 0 0 1 1.05-1.05l.82.81a.75.75 0 0 1 0 1.06Zm-9.64-9.64a.75.75 0 0 1-1.06 0l-.82-.82a.75.75 0 0 1 1.06-1.06l.82.82a.75.75 0 0 1 0 1.06ZM12 8.25A3.75 3.75 0 1 1 8.25 12A3.75 3.75 0 0 1 12 8.25Z" />
+            </svg>
+            <svg viewBox="0 0 24 24" class="theme-toggle__icon theme-toggle__icon--moon">
+              <path d="M14.78 3.25a.75.75 0 0 1 .73 1a7.26 7.26 0 0 0-.35 2.24A7.5 7.5 0 0 0 22 13.98a.75.75 0 0 1 .4 1.32A10.25 10.25 0 1 1 14.78 3.25Zm-1.07 1.9a8.75 8.75 0 1 0 6.44 9.39A9 9 0 0 1 13.66 6.5c0-.46.02-.91.05-1.35Z" />
+            </svg>
+          </span>
+          <span class="theme-toggle__text">Theme</span>
+        </button>
+
+        <a class="button button--solid site-header__cta" href="#pricing">
+          <span>Login / Sign Up</span>
+          <img src="icons/user_icon.png" alt="" aria-hidden="true" class="button__icon-image" />
+        </a>
+      </div>
+    </div>
+
+    <section class="hero shell">
+      <div class="hero__content reveal">
+        <p class="eyebrow">Unit 6 custom showcase</p>
+        <h1>Build a creator setup that looks pro before you even press record.</h1>
+        <p class="hero__text">
+          Influence is a polished demo site built to showcase responsive layout,
+          advanced CSS, purposeful motion, and a clean design system around
+          camera gear, creator workspaces, and studio tools.
+        </p>
+
+        <div class="hero__actions">
+          <a class="button button--solid" href="#gallery">Explore the gear</a>
+          <a class="button button--ghost" href="#features">See what I learned</a>
+        </div>
+
+        <ul class="hero__stats" aria-label="Key benefits">
+          <li>
+            <strong>Grid + Flex</strong>
+            <span>Responsive layout system</span>
+          </li>
+          <li>
+            <strong>Scroll snap</strong>
+            <span>Smooth horizontal browsing</span>
+          </li>
+          <li>
+            <strong>Reduced motion</strong>
+            <span>Accessible interaction</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero__media reveal reveal--delay">
+        <figure class="hero-card hero-card--main">
+          <img
+            src="images/IMG_8764.jpg"
+            alt="Creator desk setup with laptop, dual monitors, and camera gear"
+          />
+          <figcaption>
+            A clean creator workspace designed for editing, streaming, and content production.
+          </figcaption>
+        </figure>
+
+        <div class="hero-card hero-card--mini">
+          <span class="hero-card__label">Featured</span>
+          <p>Precision lenses, flexible lighting, workstation flow, and mobile-friendly navigation.</p>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main id="main-content">
+    <section class="category-strip">
+      <div class="shell">
+        <ul class="category-strip__list" aria-label="Product categories">
+          <li class="category-chip reveal">
+            <img src="icons/lens_icon.png" alt="" aria-hidden="true" />
+            <span>Lenses</span>
+          </li>
+          <li class="category-chip reveal reveal--delay-2">
+            <img src="icons/light_icon.png" alt="" aria-hidden="true" />
+            <span>Lights</span>
+          </li>
+          <li class="category-chip reveal reveal--delay-3">
+            <img src="icons/laptop_icon.png" alt="" aria-hidden="true" />
+            <span>Workstations</span>
+          </li>
+          <li class="category-chip reveal reveal--delay-4">
+            <img src="icons/camera_icon.png" alt="" aria-hidden="true" />
+            <span>Cameras</span>
+          </li>
+          <li class="category-chip reveal reveal--delay-5">
+            <img src="icons/drone_icon.png" alt="" aria-hidden="true" />
+            <span>Drones</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section shell" id="features">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Course mastery</p>
+        <h2>Feature cards that show the techniques instead of just claiming them.</h2>
+        <p>
+          This section mixes Grid, Flexbox, container queries, custom properties,
+          SVG icons, and layered visual styling in a way that still feels like one design.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature-card reveal">
+          <div class="feature-card__inner">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="icon-svg">
+                <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5v-9Zm3 0v9h10v-9H7Zm5 1.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 0 1 0-7Z"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Precision framing</h3>
+              <p>
+                Product cards scale from stacked to split layouts using a container query,
+                so each component adapts to its own width instead of only the whole viewport.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card reveal reveal--delay-2">
+          <div class="feature-card__inner">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="icon-svg">
+                <path d="M12 2l2.2 4.7L19 9l-3.5 3.4.8 4.9L12 15l-4.3 2.3.8-4.9L5 9l4.8-2.3L12 2Z"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Lighting that guides focus</h3>
+              <p>
+                Layered gradients, blend modes, and image filters give depth to the page instead of using flat blocks everywhere.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card reveal reveal--delay-3">
+          <div class="feature-card__inner">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="icon-svg">
+                <path d="M5 5h6v6H5V5Zm8 0h6v6h-6V5ZM5 13h6v6H5v-6Zm8 3h6v3h-6v-3Zm0-3h6v1.5h-6V13Z"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Layout systems that scale</h3>
+              <p>
+                The page uses Flexbox for alignment and navigation, Grid for the major sections,
+                and grid-template-areas for the hero structure.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card reveal reveal--delay-4">
+          <div class="feature-card__inner">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="icon-svg">
+                <path d="M12 3a8 8 0 0 1 8 8c0 5.2-8 10-8 10S4 16.2 4 11a8 8 0 0 1 8-8Zm0 3.5A1.5 1.5 0 1 0 12 9.5a1.5 1.5 0 0 0 0-3Z"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Accessible motion</h3>
+              <p>
+                Reveals, hover states, and the progress bar support the interface, but reduced-motion users still see everything fully visible and correctly placed.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell section--wide" id="gallery">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Visual polish</p>
+        <h2>A gallery section with structured cards, not random images dropped into the page.</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="showcase-card showcase-card--feature reveal">
+          <img src="images/IMG_8752.jpg" alt="Fireworks exploding during a Fourth of July celebration" />
+          <div class="showcase-card__content">
+            <p class="card-tag">Campaign</p>
+            <h3>Holiday launch visuals</h3>
+            <p>
+              Bold color contrast, contrast-safe typography, and a layered overlay make the photo feel intentional.
+            </p>
+          </div>
+        </article>
+
+        <article class="showcase-card reveal reveal--delay-2">
+          <img src="images/IMG_8763.jpg" alt="Camera gear arranged for content creation" />
+          <div class="showcase-card__content">
+            <p class="card-tag">Studio</p>
+            <h3>Compact creator setup</h3>
+            <p>Built for clean product shots, controlled lighting, and efficient editing.</p>
+          </div>
+        </article>
+
+        <article class="showcase-card reveal reveal--delay-3">
+          <img src="images/IMG_8766.jpg" alt="Canon EF 75-300mm telephoto lens on display" />
+          <div class="showcase-card__content">
+            <p class="card-tag">Gear</p>
+            <h3>Telephoto lens spotlight</h3>
+            <p>Product storytelling with stronger spacing, hierarchy, and hover feedback.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="bundles">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Advanced CSS</p>
+        <h2>Horizontal card browsing with scroll snap.</h2>
+        <p>
+          Swipe on mobile or trackpad-scroll on desktop. Each card snaps into place so the interaction feels more polished.
+        </p>
+      </div>
+
+      <div class="snap-row" aria-label="Featured creator bundles">
+        <article class="bundle-card reveal">
+          <p class="card-tag">Starter</p>
+          <h3>Weekend creator kit</h3>
+          <p>Mirrorless camera, lightweight tripod, beginner lens, and compact LED panel.</p>
+          <span class="bundle-card__price">$799</span>
+        </article>
+
+        <article class="bundle-card reveal reveal--delay-2">
+          <p class="card-tag">Pro</p>
+          <h3>Editing command center</h3>
+          <p>Dual-monitor desk setup, laptop dock, color-accurate display workflow, and storage.</p>
+          <span class="bundle-card__price">$1,499</span>
+        </article>
+
+        <article class="bundle-card reveal reveal--delay-3">
+          <p class="card-tag">Field</p>
+          <h3>Travel filmmaker pack</h3>
+          <p>Portable drone, compact camera body, lens filters, and creator sling bag.</p>
+          <span class="bundle-card__price">$1,899</span>
+        </article>
+
+        <article class="bundle-card reveal reveal--delay-4">
+          <p class="card-tag">Studio</p>
+          <h3>Commercial lighting rig</h3>
+          <p>Soft lights, overhead mount, remote triggers, and accessories for product shoots.</p>
+          <span class="bundle-card__price">$2,250</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="reviews">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Social proof</p>
+        <h2>Testimonials styled as real UI components.</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card reveal">
+          <p>
+            “The page feels way more intentional now. It looks like a real brand site,
+            but it also clearly shows the CSS techniques behind it.”
+          </p>
+          <footer>
+            <strong>Maya R.</strong>
+            <span>Content creator</span>
+          </footer>
+        </article>
+
+        <article class="testimonial-card reveal reveal--delay-2">
+          <p>
+            “The mobile navigation, progress bar, and reveal effects add motion without making the experience harder to use.”
+          </p>
+          <footer>
+            <strong>Jordan P.</strong>
+            <span>Front-end student</span>
+          </footer>
+        </article>
+
+        <article class="testimonial-card reveal reveal--delay-3">
+          <p>
+            “The cards and spacing scale really well. It does not feel like a default template at all.”
+          </p>
+          <footer>
+            <strong>Alex T.</strong>
+            <span>Design reviewer</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="pricing">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Pricing cards</p>
+        <h2>A clean ending section with clear contrast and hierarchy.</h2>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card reveal">
+          <h3>Starter</h3>
+          <p class="price-card__value">$29<span>/mo</span></p>
+          <ul>
+            <li>Basic creator bundle access</li>
+            <li>One saved wishlist</li>
+            <li>Email support</li>
+          </ul>
+          <a class="button button--ghost button--full" href="#top">Choose Starter</a>
+        </article>
+
+        <article class="price-card price-card--featured reveal reveal--delay-2">
+          <p class="price-badge">Most popular</p>
+          <h3>Pro</h3>
+          <p class="price-card__value">$59<span>/mo</span></p>
+          <ul>
+            <li>Pro gear recommendations</li>
+            <li>Priority support</li>
+            <li>Exclusive product drops</li>
+          </ul>
+          <a class="button button--solid button--full" href="#top">Choose Pro</a>
+        </article>
+
+        <article class="price-card reveal reveal--delay-3">
+          <h3>Studio</h3>
+          <p class="price-card__value">$99<span>/mo</span></p>
+          <ul>
+            <li>Commercial setup planning</li>
+            <li>Bundle customization</li>
+            <li>Dedicated account support</li>
+          </ul>
+          <a class="button button--ghost button--full" href="#top">Choose Studio</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div>
+        <p class="site-footer__brand">Influence</p>
+        <p class="site-footer__text">
+          A custom showcase site focused on responsive CSS architecture, visual polish, motion, and accessibility.
+        </p>
+      </div>
+
+      <nav class="site-footer__links" aria-label="Social media links">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+      </nav>
+    </div>
+
+    <p class="site-footer__copyright">
+      &copy; <span id="currentYear">2025</span> Influence
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
